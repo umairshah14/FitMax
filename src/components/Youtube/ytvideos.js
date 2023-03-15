@@ -1,5 +1,4 @@
 import react, { useEffect, useState } from "react";
-import $ from "jquery";
 
 
 const YTvideoss = () => {
@@ -25,8 +24,7 @@ const YTvideoss = () => {
         console.log(response.data);
         let result = [];
         response.data.results.slice(0,3).map((doc) => {
-          console.log(doc.thumbnail.id);
-          result.push({
+          return result.push({
             ...doc,
             Videolink: "https://www.youtube.com/embed/" + doc.thumbnail.id,
           });
@@ -34,7 +32,7 @@ const YTvideoss = () => {
         setAllVideos(result);
       })
       .catch(function (error) {});
-  }, []);
+  }, [searchTerm]);
   console.log(allVideos);
   return (
     <div>
