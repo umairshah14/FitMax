@@ -6,7 +6,7 @@ function Home() {
 
     return (
         <div>
-            <h1>FitMax</h1>
+            
             <div><BMI /></div>
             <div><DailyCalorie /></div>
         </div>
