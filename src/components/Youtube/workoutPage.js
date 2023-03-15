@@ -8,4 +8,6 @@ const WorkoutPage = () =>{
     )
 }
 
-export default WorkoutPage
+export default WorkoutPage;
+default WorkoutPage;
+
