@@ -8,7 +8,7 @@ import {
   Typography,
   Input,
   Button,
-  Textarea
+  Alert
 } from "@material-tailwind/react";
 
 
@@ -44,8 +44,9 @@ function BMI() {
           });
       }, [bodyData.age, bodyData.height, bodyData.weight]);
 
-      return ( <div>
-        <div className="flex justify-center">
+      return ( 
+<div>
+<div className="flex flex-row justify-center  items-center gap-10">
   <Card className="w-min bg-indigo-800 mt-12 ml-12 p-1" >
       <CardHeader
         variant="gradient"
@@ -53,7 +54,7 @@ function BMI() {
       > BMI
       </CardHeader>
       <CardBody className="flex flex-col gap-4">
-        <Input   variant='static' label="Age" size="lg" />
+        <Input    label="Age" size="lg" />
         <Input  className="" label="Kg" size="lg" />
         <Input  className="" label="cm" size="lg" />
       </CardBody>
@@ -62,30 +63,13 @@ function BMI() {
           Calculate my BMI
         </Button>
       </CardFooter>
-    </Card>
+    </Card> 
     
-    </div>
-       {/*} <div className="shadow-lg rounded-lg bg-white p-6">
-          
-           
-           <div className="flex flex-col">
-             <input className="border border-gray-400 p-2 rounded-lg  mb-2" type="text"  />
-             <input className="border border-gray-400 p-2 rounded-lg  mb-2" type="text"  />
-           </div>
-           <div className="grid grid-rows-3 grid-flow-col gap-4">
-  <div className="row-span-3 rounded-md border-2 border-indigo-800">
-    <h2 className="text-lg font-bold mb-2">BMI</h2>
-    <div className="flex flex-col items-end">
-             <input className="mr-5 w-24 border border-gray-400 p-2 rounded-lg  mb-2" type="text"  />
-             <input className="mr-5 w-24 border border-gray-400 p-2 rounded-lg  mb-2" type="text"  />
-           </div>
-  </div>
-  <div class="col-span-3 rounded-md ">02</div>
-  
-</div>
-      </div>*/}
-      
-      </div>);
+    <div className=" h-10 pt-1 border-2 border-indigo-800 rounded-lg px-8">25zcv</div>
+    
+</div>  
+
+</div>);
 
 }
 
