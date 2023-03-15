@@ -7,6 +7,7 @@ import {
   CardFooter,
   Input,
   Button,
+  Typography,
 } from "@material-tailwind/react";
 
 function BMI() {
@@ -50,19 +51,46 @@ function BMI() {
 
   return (
     <div>
-      <div className="flex flex-row justify-center  items-center gap-10">
+      <div className="flex flex-row justify-center  items-center gap-20">
         <Card className="w-min bg-indigo-800 mt-12 ml-12 p-1">
           <CardHeader
             variant="gradient"
-            className="grid h-8 place-items-center bg-indigo-50 text-indigo-800"
+            className="grid h-8 text-xl font-bold place-items-center border-2 border-indigo-800  bg-indigo-50 text-indigo-800"
           >
             {" "}
             BMI
           </CardHeader>
           <CardBody className="flex flex-col gap-4">
-            <Input label="Age" size="lg" />
-            <Input className="" label="Kg" size="lg" />
-            <Input className="" label="cm" size="lg" />
+            <div className="flex flex-row justify-center gap-4">
+          <Typography
+                    variant="small"
+                    color="blue-gray"
+                    className="font-medium text-indigo-50 text-xl"
+                  >
+                    Age
+            </Typography>
+            <Input  className="text-indigo-50" />
+            </div>
+            <div className="flex flex-row justify-center gap-4">
+          <Typography
+                    variant="small"
+                    color="blue-gray"
+                    className=" font-medium text-indigo-50 text-xl"
+                  >
+                    Weight
+            </Typography>
+            <Input  className="text-indigo-50" />
+            </div>
+            <div className="flex flex-row justify-center gap-4">
+          <Typography
+                    variant="small"
+                    color="blue-gray"
+                    className=" font-medium text-indigo-50 text-xl"
+                  >
+                    Height
+            </Typography>
+            <Input  className="text-indigo-50" />
+            </div>
           </CardBody>
           <CardFooter className="pt-0">
             <Button fullWidth className="text-indigo-800 bg-indigo-50">
