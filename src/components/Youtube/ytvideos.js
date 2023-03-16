@@ -39,12 +39,16 @@ const YTvideoss = () => {
       .catch(function (error) {});
   }, [searchTerm]);
 
+  const [variant, setVariant] = useState("")
+
   const handleShouldersClick = () => {
     setSearchTerm("abs workout");
+    setVariant(!variant)
   };
   const handleChestClick = () => {
-   
     setSearchTerm("chest workout");
+    setVariant(!variant)
+
   };
   const handleBicepsClick = () => {
     setSearchTerm("bicep workout");
@@ -71,13 +75,13 @@ const YTvideoss = () => {
       {/* ALL BUTTONS TO PICK DIFFERENT WORKOUTS */}
       <Container id="workOutBtns">
         <Button
-          variant="contained"
+          variant={variant ? "contained" : "outlined"}
           onClick={handleShouldersClick}
         >
           Shoulders
         </Button>
         <Button
-          variant="contained"
+          variant={variant ? "contained" : "outlined"}
           onClick={handleChestClick}
         >
           Chest
