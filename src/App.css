@@ -36,3 +36,18 @@
     transform: rotate(360deg);
   }
 }
+
+
+#workOutBtns > *{
+  margin-right: 2rem;
+  margin-top: 1rem;
+  min-width: 153px;
+}
+
+.exerciseTitle {
+  margin-top: 1rem;
+}
+
+.youtubeVideos{
+  margin-bottom: 2rem;
+}

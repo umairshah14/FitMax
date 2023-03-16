@@ -1,11 +1,13 @@
 import react, { useEffect, useState } from "react";
-import {
-  Button
-} from "@material-tailwind/react";
+// import { Button } from "@material-tailwind/react";
+import Button from "@mui/material/Button";
+import Row from "react-bootstrap/Row";
+import Container from "react-bootstrap/Container";
+import Col from "react-bootstrap/Col";
 
 const YTvideoss = () => {
-  const [searchTerm, setSearchTerm] = useState("bicep execrise")
-  
+  const [searchTerm, setSearchTerm] = useState();
+
   const [allVideos, setAllVideos] = useState([]);
 
   const axios = require("axios");
@@ -26,7 +28,7 @@ const YTvideoss = () => {
       .then(function (response) {
         console.log(response.data);
         let result = [];
-        response.data.results.slice(0,3).map((doc) => {
+        response.data.results.slice(0, 6).map((doc) => {
           return result.push({
             ...doc,
             Videolink: "https://www.youtube.com/embed/" + doc.thumbnail.id,
@@ -37,35 +39,89 @@ const YTvideoss = () => {
       .catch(function (error) {});
   }, [searchTerm]);
 
-  //console.log(allVideos);
-  const handleAbsClick  = () => {
+  const handleShouldersClick = () => {
     setSearchTerm("abs workout");
-  }
-    const handleLegsClick = () => {
-      setSearchTerm("leg workout");
-    };
+  };
+  const handleChestClick = () => {
+   
+    setSearchTerm("chest workout");
+  };
+  const handleBicepsClick = () => {
+    setSearchTerm("bicep workout");
+  };
+  const handleTricepsClick = () => {
+    setSearchTerm("tricep workout");
+  };
+  const handleBackClick = () => {
+    setSearchTerm("back workout");
+  };
+  const handleLegsClick = () => {
+    setSearchTerm("leg workout");
+  };
+  const handleAbsClick = () => {
+    setSearchTerm("abs workout");
+  };
 
-  
   return (
     <div>
-      <Button className="m-2" onClick={handleAbsClick}>Abs</Button>
-      <Button onClick={handleLegsClick}>Legs</Button>
-      {allVideos.map((item) => {
-        return (
-          <div>
-            <button></button>
-            <iframe
-              width="560"
-              height="315"
-              src={item.Videolink}
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            ></iframe>
-          </div>
-        );
-      })}
+      <Container className="exerciseTitle">
+        <h1>Workouts</h1>
+        <h4>Click on one of the buttons below to find exercises relating to your choice</h4>
+      </Container>
+      {/* ALL BUTTONS TO PICK DIFFERENT WORKOUTS */}
+      <Container id="workOutBtns">
+        <Button
+          variant="contained"
+          onClick={handleShouldersClick}
+        >
+          Shoulders
+        </Button>
+        <Button
+          variant="contained"
+          onClick={handleChestClick}
+        >
+          Chest
+        </Button>
+        <Button variant="contained" onClick={handleBicepsClick}>
+          Biceps
+        </Button>
+        <Button variant="contained" onClick={handleTricepsClick}>
+          Triceps
+        </Button>
+        <Button variant="contained" onClick={handleBackClick}>
+          Back
+        </Button>
+        <Button variant="contained" onClick={handleLegsClick}>
+          Legs
+        </Button>
+        <Button variant="contained" onClick={handleAbsClick}>
+          Abs
+        </Button>
+      </Container>
+
+      {/* RETURN 3 VIDEOS FROM CHOSEN EXERCISE */}
+      <Container className="youtubeVideos">
+        <Row>
+          {allVideos.map((item) => {
+            return (
+              <Col lg={4}>
+                <div>
+                  <button></button>
+                  <iframe
+                    style={{ borderRadius: "10px" }}
+                    width="400"
+                    height="250"
+                    src={item.Videolink}
+                    title="YouTube video player"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+              </Col>
+            );
+          })}
+        </Row>
+      </Container>
     </div>
   );
 };
