@@ -104,21 +104,21 @@ function BMI() {
         </div>
       </div>
       <div className="md:flex flex-row justify-center  items-center gap-20 flex-nowrap mt-14">
-           <div className="box-border h-32 w-64 p-4 border-4 border-pink-200 bg-pink-300 ">
-            <p>Underweight</p>
-            <p>Below 18.5</p>
+           <div className="box-border h-32 w-64 p-4 border-4 border-pink-200 rounded-md bg-pink-300 ">
+            <p className="text-2xl font-bold text-center">Underweight</p>
+            <p className="text-center font-semibold">Below 18.5</p>
            </div>
-           <div className="box-border h-32 w-64 p-4 border-4 border-green-200 bg-green-400">
-            <p>Healthy Weight</p>
-            <p>18.5—24.9</p>
+           <div className="box-border h-32 w-64 p-4 border-4 border-green-200 rounded-md bg-green-400">
+            <p className="text-2xl font-bold text-center">Healthy Weight</p>
+            <p className="text-center font-semibold">18.5—24.9</p>
            </div>
-           <div className="box-border h-32 w-64 p-4 border-4 border-orange-200 bg-orange-500 ">
-            <p>Overweight</p>
-            <p>25.0—29.9</p>
+           <div className="box-border h-32 w-64 p-4 border-4 border-orange-200 rounded-md bg-orange-500 ">
+            <p className="text-2xl font-bold text-center">Overweight</p>
+            <p className="text-center font-semibold">25.0—29.9</p>
            </div>
-           <div className="box-border h-32 w-64 p-4 border-4 border-red-200 bg-red-600">
-            <p>Obesity</p>
-            <p>30.0 and Above</p>
+           <div className="box-border h-32 w-64 p-4 border-4 border-red-200 rounded-md bg-red-500">
+            <p className="text-2xl font-bold text-center">Obesity</p>
+            <p className="text-center font-semibold">30.0 and Above</p>
            </div>
       </div>
       
