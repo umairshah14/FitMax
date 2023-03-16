@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import axios from "axios";
 import {
   Button
 } from "@material-tailwind/react";
@@ -8,23 +9,21 @@ const YTvideoss = () => {
   
   const [allVideos, setAllVideos] = useState([]);
 
-  const axios = require("axios");
-
-  const options = {
-    method: "GET",
-    url: "https://simple-youtube-search.p.rapidapi.com/search",
-    params: { query: searchTerm, safesearch: "false" },
-    headers: {
-      "X-RapidAPI-Key": "f7b94b1a54msh3c3038557e37090p1526ecjsna94e501ae6dc",
-      "X-RapidAPI-Host": "simple-youtube-search.p.rapidapi.com",
-    },
-  };
 
   useEffect(() => {
+    const options = {
+      method: "GET",
+      url: "https://simple-youtube-search.p.rapidapi.com/search",
+      params: { query: searchTerm, safesearch: "false" },
+      headers: {
+        "X-RapidAPI-Key": "f7b94b1a54msh3c3038557e37090p1526ecjsna94e501ae6dc",
+        "X-RapidAPI-Host": "simple-youtube-search.p.rapidapi.com",
+      },
+    };
+
     axios
       .request(options)
       .then(function (response) {
-        console.log(response.data);
         let result = [];
         response.data.results.slice(0,3).map((doc) => {
           return result.push({
@@ -34,7 +33,8 @@ const YTvideoss = () => {
         });
         setAllVideos(result);
       })
-      .catch(function (error) {});
+      .catch(function (error) {
+      });
   }, [searchTerm]);
 
   //console.log(allVideos);
