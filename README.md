@@ -1,23 +1,23 @@
 # FitMax
 ## Overview
-* FitMax is a webapp which aims to display the most effective workout videos for each body part. It also allows you to
+* FitMax is a webapp which aims to display the most effective workout videos for each body part. 
+It also allows you to calculate different metrics for your health.
 
 * In FitMax you can:
-* * See the latest league tables
-* * See Fixtures and Results for all 4 football leagues in England and see highlights of the game for each fixture.
-* * Search for your preffered football player to see their information. 
+* * Calculate your Body Mass Index.
+* * Calculate your calorie based on your fitness goal.
+* * Calculate your Body Fat Percentage.
+* * See the most effective workouts for a specific body part.
 
 
 
 
 # Technical Acceptance Criteria
-* Application uses Bootstrap.
-* Be deployed to GitHub Pages.
-* Be interactive (in other words, accept and respond to user input).
-* Use at least two server-side APIs.
-* Does not use alerts, confirms, or prompts (use modals).
-* Be responsive.
-* Have a polished UI.
+* Application uses React.
+* Application uses Node.js.
+* Application uses at least two libraries, packages, or technologies that we haven't discussed.
+* Application has both GET and POST routes for retrieving and adding new data.
+
 
 # Technologies Used
 * HTML5
