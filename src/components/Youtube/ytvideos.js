@@ -1,8 +1,11 @@
 import react, { useEffect, useState } from "react";
-
+import {
+  Button
+} from "@material-tailwind/react";
 
 const YTvideoss = () => {
-  var searchTerm = "bicep exercise";
+  const [searchTerm, setSearchTerm] = useState("bicep execrise")
+  
   const [allVideos, setAllVideos] = useState([]);
 
   const axios = require("axios");
@@ -33,12 +36,24 @@ const YTvideoss = () => {
       })
       .catch(function (error) {});
   }, [searchTerm]);
-  console.log(allVideos);
+
+  //console.log(allVideos);
+  const handleAbsClick  = () => {
+    setSearchTerm("abs workout");
+  }
+    const handleLegsClick = () => {
+      setSearchTerm("leg workout");
+    };
+
+  
   return (
     <div>
+      <Button className="m-2" onClick={handleAbsClick}>Abs</Button>
+      <Button onClick={handleLegsClick}>Legs</Button>
       {allVideos.map((item) => {
         return (
           <div>
+            <button></button>
             <iframe
               width="560"
               height="315"

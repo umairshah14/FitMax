@@ -1,6 +1,8 @@
 import YTvideoss from "./ytvideos";
 
 const WorkoutPage = () =>{
+
+    
     return (
         <>
         <YTvideoss></YTvideoss>
@@ -9,5 +11,5 @@ const WorkoutPage = () =>{
 }
 
 export default WorkoutPage;
-default WorkoutPage;
+
 
