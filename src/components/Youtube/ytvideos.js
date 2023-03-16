@@ -1,4 +1,4 @@
-import react, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Button
 } from "@material-tailwind/react";
@@ -41,9 +41,10 @@ const YTvideoss = () => {
   const handleAbsClick  = () => {
     setSearchTerm("abs workout");
   }
-    const handleLegsClick = () => {
-      setSearchTerm("leg workout");
-    };
+    
+  const handleLegsClick = () => {
+    setSearchTerm("leg workout");
+  };
 
   
   return (
