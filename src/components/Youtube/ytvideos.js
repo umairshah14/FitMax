@@ -83,7 +83,7 @@ const YTvideoss = () => {
           {allVideos.map((item, key) => {
                 
             return (
-              <Col key={item.id} lg={4}>
+              <Col key={item.id} lg={4} md={6} sm={12}>
                 <div>
                   <button></button>
                   <iframe
