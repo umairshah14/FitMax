@@ -1,5 +1,4 @@
-import react, { useEffect, useState } from "react";
-// import { Button } from "@material-tailwind/react";
+import React, { useEffect, useState } from "react";
 import Button from "@mui/material/Button";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
@@ -7,7 +6,6 @@ import Col from "react-bootstrap/Col";
 
 const YTvideoss = () => {
   const [searchTerm, setSearchTerm] = useState();
-
   const [allVideos, setAllVideos] = useState([]);
 
   const axios = require("axios");
@@ -39,68 +37,41 @@ const YTvideoss = () => {
       .catch(function (error) {});
   }, [searchTerm]);
 
-  const [variant, setVariant] = useState("")
+  const buttons = [
+    { label: "Shoulders", searchTerm: "shoulder workout" },
+    { label: "Chest", searchTerm: "chest workout" },
+    { label: "Biceps", searchTerm: "bicep workout" },
+    { label: "Triceps", searchTerm: "tricep workout" },
+    { label: "Back", searchTerm: "back workout" },
+    { label: "Legs", searchTerm: "leg workout" },
+    { label: "Abs", searchTerm: "abs workout" },
+  ];
 
-  const handleShouldersClick = () => {
-    setSearchTerm("abs workout");
-    setVariant(!variant)
-  };
-  const handleChestClick = () => {
-    setSearchTerm("chest workout");
-    setVariant(!variant)
+  const [activeIndex, setActiveIndex] = useState(null);
 
-  };
-  const handleBicepsClick = () => {
-    setSearchTerm("bicep workout");
-  };
-  const handleTricepsClick = () => {
-    setSearchTerm("tricep workout");
-  };
-  const handleBackClick = () => {
-    setSearchTerm("back workout");
-  };
-  const handleLegsClick = () => {
-    setSearchTerm("leg workout");
-  };
-  const handleAbsClick = () => {
-    setSearchTerm("abs workout");
+  const handleClick = (index) => {
+    setSearchTerm(buttons[index].searchTerm);
+    setActiveIndex(index);
   };
 
   return (
     <div>
       <Container className="exerciseTitle">
         <h1>Workouts</h1>
-        <h5>Click on one of the buttons below to find exercises relating to your choice</h5>
+        <h5>Click on one of the buttons below to find videos of exercises relating to your choice</h5>
       </Container>
+
       {/* ALL BUTTONS TO PICK DIFFERENT WORKOUTS */}
       <Container id="workOutBtns">
-        <Button
-          variant={variant ? "contained" : "outlined"}
-          onClick={handleShouldersClick}
-        >
-          Shoulders
-        </Button>
-        <Button
-          variant={variant ? "contained" : "outlined"}
-          onClick={handleChestClick}
-        >
-          Chest
-        </Button>
-        <Button variant="contained" onClick={handleBicepsClick}>
-          Biceps
-        </Button>
-        <Button variant="contained" onClick={handleTricepsClick}>
-          Triceps
-        </Button>
-        <Button variant="contained" onClick={handleBackClick}>
-          Back
-        </Button>
-        <Button variant="contained" onClick={handleLegsClick}>
-          Legs
-        </Button>
-        <Button variant="contained" onClick={handleAbsClick}>
-          Abs
-        </Button>
+        {buttons.map((button, index) => (
+          <Button
+            key={index}
+            variant={activeIndex === index ? "contained" : "outlined"}
+            onClick={() => handleClick(index)}
+          >
+            {button.label}
+          </Button>
+        ))}
       </Container>
 
       {/* RETURN 3 VIDEOS FROM CHOSEN EXERCISE */}
