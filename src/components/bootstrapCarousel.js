@@ -19,7 +19,7 @@ function UncontrolledExample() {
         <img
           className="d-block w-100"
           src="https://www.theinertia.com/wp-content/uploads/2016/01/shutterstock_364742141.jpg"
-          alt="Second slide"
+          alt="running_pic"
         />
 
         <Carousel.Caption>
@@ -33,7 +33,7 @@ function UncontrolledExample() {
         <img
           className="d-block w-100"
           src="https://prod-everyoneactive-wp.s3.eu-west-2.amazonaws.com/wp-content/uploads/2020/03/19120257/home-workouts-1.jpg"
-          alt="3rd image"
+          alt="home_workouts"
         />
 
         <Carousel.Caption>
