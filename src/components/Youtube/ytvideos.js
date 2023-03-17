@@ -45,7 +45,7 @@ const YTvideoss = () => {
     { label: "Back", searchTerm: "back workout" },
     { label: "Legs", searchTerm: "leg workout" },
     { label: "Abs", searchTerm: "abs workout" },
-  ]; // an array of objects containing labels and search terms for different workout categories
+  ]; // an array of objects containing labels and search terms for different workout categories.
 
   const [activeIndex, setActiveIndex] = useState(null); // state to hold the index of the currently active button
 
