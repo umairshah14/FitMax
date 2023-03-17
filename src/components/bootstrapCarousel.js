@@ -33,10 +33,11 @@ function UncontrolledExample() {
         <img
           className="d-block w-100"
           src="https://prod-everyoneactive-wp.s3.eu-west-2.amazonaws.com/wp-content/uploads/2020/03/19120257/home-workouts-1.jpg"
+          alt="3rd image"
         />
 
         <Carousel.Caption>
-          <h3></h3>
+          <h3>Demo Text</h3>
           <p>
             Praesent commodo cursus magna, vel scelerisque nisl consectetur.
           </p>
