@@ -1,6 +1,4 @@
 import Carousel from 'react-bootstrap/Carousel';
-// import imageslide from '../assets/images';
-
 
 function UncontrolledExample() {
   return (
@@ -8,7 +6,7 @@ function UncontrolledExample() {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="../assets/images/old_people.jpeg"
+          src="https://images.unsplash.com/photo-1594882645126-14020914d58d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1485&q=80"
           alt="First slide"
         />
         <Carousel.Caption>
@@ -20,7 +18,7 @@ function UncontrolledExample() {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="../assets/images/running2.jpg"
+          src="https://www.theinertia.com/wp-content/uploads/2016/01/shutterstock_364742141.jpg"
           alt="Second slide"
         />
 
@@ -29,15 +27,16 @@ function UncontrolledExample() {
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </Carousel.Caption>
       </Carousel.Item>
+
+      
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="../assets/images/old_people.jpeg"
-          alt="Third slide"
+          src="https://prod-everyoneactive-wp.s3.eu-west-2.amazonaws.com/wp-content/uploads/2020/03/19120257/home-workouts-1.jpg"
         />
 
         <Carousel.Caption>
-          <h3>Third slide label</h3>
+          <h3></h3>
           <p>
             Praesent commodo cursus magna, vel scelerisque nisl consectetur.
           </p>

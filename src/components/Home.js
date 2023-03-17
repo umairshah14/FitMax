@@ -1,6 +1,5 @@
 
-import UncontrolledExample from "./Carousel";
-import Header from "./Header/index";
+import UncontrolledExample from "./bootstrapCarousel";
 
 function Home() {
 
@@ -19,12 +18,12 @@ function Home() {
 
     return (
         <>
-            <header />
+    
             <main>
                 {/* div for carousel */}
-                {/* <div className="max-w-[1400px] h-[780px] w-full m-auto py-16 px-4 relative"> */}
+                <div className="max-w- h-[50%] w-full m-auto py-16 px-4 relative">
                     <div> <UncontrolledExample /> </div>
-                {/* </div> */}
+                </div>
                 
                 {/* div for importance of health */}
                 <div>
@@ -32,7 +31,7 @@ function Home() {
                 </div>  
 
                 {/* div for our sponsors */}
-                <div>
+                <div className="sponsors">
 
                 </div>
 
