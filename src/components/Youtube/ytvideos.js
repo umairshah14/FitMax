@@ -9,7 +9,7 @@ import axios from "axios";
 
 
 const YTvideoss = () => {
-  const [searchTerm, setSearchTerm] = useState(); // state to hold the search term entered by the user
+  const [searchTerm, setSearchTerm] = useState("body workouts"); // state to hold the search term entered by the user
   const [allVideos, setAllVideos] = useState([]); // state to hold an array of videos returned by the API
 
   useEffect(() => {
@@ -80,9 +80,10 @@ const YTvideoss = () => {
       {/* RETURN 3 VIDEOS FROM CHOSEN EXERCISE */}
       <Container className="youtubeVideos">
         <Row>
-          {allVideos.map((item) => {
+          {allVideos.map((item, key) => {
+                
             return (
-              <Col lg={4}>
+              <Col key={item.id} lg={4}>
                 <div>
                   <button></button>
                   <iframe
