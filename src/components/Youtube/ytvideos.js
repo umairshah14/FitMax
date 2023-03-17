@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
-import Button from "@mui/material/Button";
-import Row from "react-bootstrap/Row";
-import Container from "react-bootstrap/Container";
-import Col from "react-bootstrap/Col";
+import Button from "@mui/material/Button"; // importing the Material-UI button component
+import Row from "react-bootstrap/Row"; // importing the Bootstrap row component
+import Container from "react-bootstrap/Container"; // importing the Bootstrap container component
+import Col from "react-bootstrap/Col"; // importing the Bootstrap column component
 
 const YTvideoss = () => {
-  const [searchTerm, setSearchTerm] = useState();
-  const [allVideos, setAllVideos] = useState([]);
+  const [searchTerm, setSearchTerm] = useState(); // state to hold the search term entered by the user
+  const [allVideos, setAllVideos] = useState([]); // state to hold an array of videos returned by the API
 
-  const axios = require("axios");
+  const axios = require("axios"); // importing the Axios library for making API calls
 
   const options = {
     method: "GET",
@@ -22,7 +22,7 @@ const YTvideoss = () => {
 
   useEffect(() => {
     axios
-      .request(options)
+      .request(options) // making an API call with the search term entered by the user
       .then(function (response) {
         console.log(response.data);
         let result = [];
@@ -30,12 +30,12 @@ const YTvideoss = () => {
           return result.push({
             ...doc,
             Videolink: "https://www.youtube.com/embed/" + doc.thumbnail.id,
-          });
+          }); // creating an array of objects containing video information and their embed links
         });
-        setAllVideos(result);
+        setAllVideos(result); // updating the state with the array of videos
       })
       .catch(function (error) {});
-  }, [searchTerm]);
+  }, [searchTerm]); // useEffect hook to make the API call when the search term changes
 
   const buttons = [
     { label: "Shoulders", searchTerm: "shoulder workout" },
@@ -45,13 +45,13 @@ const YTvideoss = () => {
     { label: "Back", searchTerm: "back workout" },
     { label: "Legs", searchTerm: "leg workout" },
     { label: "Abs", searchTerm: "abs workout" },
-  ];
+  ]; // an array of objects containing labels and search terms for different workout categories
 
-  const [activeIndex, setActiveIndex] = useState(null);
+  const [activeIndex, setActiveIndex] = useState(null); // state to hold the index of the currently active button
 
   const handleClick = (index) => {
-    setSearchTerm(buttons[index].searchTerm);
-    setActiveIndex(index);
+    setSearchTerm(buttons[index].searchTerm); // updating the search term state with the term associated with the clicked button
+    setActiveIndex(index); // updating the active button index state
   };
 
   return (
