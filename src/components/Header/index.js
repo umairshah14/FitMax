@@ -18,13 +18,25 @@ function Header() {
       </li>
       <li className="nav-item">
         <NavLink
-          to="Workouts"
+          to="Fitness"
+          className={({ isActive }) =>
+            isActive ? 'nav-link active' : 'nav-link'
+          }
+        >
+          Fitness
+        </NavLink>
+        
+      </li>
+      <li className="nav-item">
+        <NavLink
+          to="Workout"
           className={({ isActive }) =>
             isActive ? 'nav-link active' : 'nav-link'
           }
         >
           Workouts
         </NavLink>
+        
       </li>
     </ul>
   );
