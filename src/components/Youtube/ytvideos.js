@@ -1,14 +1,16 @@
+
+import Button from "@mui/material/Button"; // importing the Material-UI button component
+import Row from "react-bootstrap/Row"; // importing the Bootstrap row component
+import Container from "react-bootstrap/Container"; // importing the Bootstrap container component
+import Col from "react-bootstrap/Col"; // importing the Bootstrap column component
+
 import { useEffect, useState } from "react";
 import axios from "axios";
-import {
-  Button
-} from "@material-tailwind/react";
+
 
 const YTvideoss = () => {
-  const [searchTerm, setSearchTerm] = useState("bicep execrise")
-  
-  const [allVideos, setAllVideos] = useState([]);
-
+  const [searchTerm, setSearchTerm] = useState(); // state to hold the search term entered by the user
+  const [allVideos, setAllVideos] = useState([]); // state to hold an array of videos returned by the API
 
   useEffect(() => {
     const options = {
@@ -22,51 +24,82 @@ const YTvideoss = () => {
     };
 
     axios
-      .request(options)
+      .request(options) // making an API call with the search term entered by the user
       .then(function (response) {
         let result = [];
-        response.data.results.slice(0,3).map((doc) => {
+        response.data.results.slice(0, 6).map((doc) => {
           return result.push({
             ...doc,
             Videolink: "https://www.youtube.com/embed/" + doc.thumbnail.id,
-          });
+          }); // creating an array of objects containing video information and their embed links
         });
-        setAllVideos(result);
+        setAllVideos(result); // updating the state with the array of videos
       })
-      .catch(function (error) {
-      });
-  }, [searchTerm]);
 
-  //console.log(allVideos);
-  const handleAbsClick  = () => {
-    setSearchTerm("abs workout");
-  }
-    
-  const handleLegsClick = () => {
-    setSearchTerm("leg workout");
+      .catch(function (error) {});
+  }, [searchTerm]); // useEffect hook to make the API call when the search term changes
+
+  const buttons = [
+    { label: "Shoulders", searchTerm: "shoulder workout" },
+    { label: "Chest", searchTerm: "chest workout" },
+    { label: "Biceps", searchTerm: "bicep workout" },
+    { label: "Triceps", searchTerm: "tricep workout" },
+    { label: "Back", searchTerm: "back workout" },
+    { label: "Legs", searchTerm: "leg workout" },
+    { label: "Abs", searchTerm: "abs workout" },
+  ]; // an array of objects containing labels and search terms for different workout categories.
+
+  const [activeIndex, setActiveIndex] = useState(null); // state to hold the index of the currently active button
+
+  const handleClick = (index) => {
+    setSearchTerm(buttons[index].searchTerm); // updating the search term state with the term associated with the clicked button
+    setActiveIndex(index); // updating the active button index state
+
   };
 
-  
   return (
     <div>
-      <Button className="m-2" onClick={handleAbsClick}>Abs</Button>
-      <Button onClick={handleLegsClick}>Legs</Button>
-      {allVideos.map((item) => {
-        return (
-          <div>
-            <button></button>
-            <iframe
-              width="560"
-              height="315"
-              src={item.Videolink}
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            ></iframe>
-          </div>
-        );
-      })}
+      <Container className="exerciseTitle">
+        <h1>Workouts</h1>
+        <h5>Click on one of the buttons below to find videos of exercises relating to your choice</h5>
+      </Container>
+
+      {/* ALL BUTTONS TO PICK DIFFERENT WORKOUTS */}
+      <Container id="workOutBtns">
+        {buttons.map((button, index) => (
+          <Button
+            key={index}
+            variant={activeIndex === index ? "contained" : "outlined"}
+            onClick={() => handleClick(index)}
+          >
+            {button.label}
+          </Button>
+        ))}
+      </Container>
+
+      {/* RETURN 3 VIDEOS FROM CHOSEN EXERCISE */}
+      <Container className="youtubeVideos">
+        <Row>
+          {allVideos.map((item) => {
+            return (
+              <Col lg={4}>
+                <div>
+                  <button></button>
+                  <iframe
+                    style={{ borderRadius: "10px" }}
+                    width="400"
+                    height="250"
+                    src={item.Videolink}
+                    title="YouTube video player"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+              </Col>
+            );
+          })}
+        </Row>
+      </Container>
     </div>
   );
 };
