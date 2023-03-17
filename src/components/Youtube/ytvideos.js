@@ -70,7 +70,7 @@ const YTvideoss = () => {
     <div>
       <Container className="exerciseTitle">
         <h1>Workouts</h1>
-        <h4>Click on one of the buttons below to find exercises relating to your choice</h4>
+        <h5>Click on one of the buttons below to find exercises relating to your choice</h5>
       </Container>
       {/* ALL BUTTONS TO PICK DIFFERENT WORKOUTS */}
       <Container id="workOutBtns">
