@@ -1,30 +1,31 @@
-import React, { useEffect, useState } from "react";
+
 import Button from "@mui/material/Button"; // importing the Material-UI button component
 import Row from "react-bootstrap/Row"; // importing the Bootstrap row component
 import Container from "react-bootstrap/Container"; // importing the Bootstrap container component
 import Col from "react-bootstrap/Col"; // importing the Bootstrap column component
 
+import { useEffect, useState } from "react";
+import axios from "axios";
+
+
 const YTvideoss = () => {
   const [searchTerm, setSearchTerm] = useState(); // state to hold the search term entered by the user
   const [allVideos, setAllVideos] = useState([]); // state to hold an array of videos returned by the API
 
-  const axios = require("axios"); // importing the Axios library for making API calls
-
-  const options = {
-    method: "GET",
-    url: "https://simple-youtube-search.p.rapidapi.com/search",
-    params: { query: searchTerm, safesearch: "false" },
-    headers: {
-      "X-RapidAPI-Key": "f7b94b1a54msh3c3038557e37090p1526ecjsna94e501ae6dc",
-      "X-RapidAPI-Host": "simple-youtube-search.p.rapidapi.com",
-    },
-  };
-
   useEffect(() => {
+    const options = {
+      method: "GET",
+      url: "https://simple-youtube-search.p.rapidapi.com/search",
+      params: { query: searchTerm, safesearch: "false" },
+      headers: {
+        "X-RapidAPI-Key": "f7b94b1a54msh3c3038557e37090p1526ecjsna94e501ae6dc",
+        "X-RapidAPI-Host": "simple-youtube-search.p.rapidapi.com",
+      },
+    };
+
     axios
       .request(options) // making an API call with the search term entered by the user
       .then(function (response) {
-        console.log(response.data);
         let result = [];
         response.data.results.slice(0, 6).map((doc) => {
           return result.push({
@@ -34,6 +35,7 @@ const YTvideoss = () => {
         });
         setAllVideos(result); // updating the state with the array of videos
       })
+
       .catch(function (error) {});
   }, [searchTerm]); // useEffect hook to make the API call when the search term changes
 
@@ -52,6 +54,7 @@ const YTvideoss = () => {
   const handleClick = (index) => {
     setSearchTerm(buttons[index].searchTerm); // updating the search term state with the term associated with the clicked button
     setActiveIndex(index); // updating the active button index state
+
   };
 
   return (
