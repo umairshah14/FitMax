@@ -1,7 +1,7 @@
 import BMI from "./BMI";
 import DailyCalorie from "./DailyCalorie";
 import {Button,} from "@material-tailwind/react"
- import { useEffect, useState } from "react";
+ import { useState } from "react";
 
 function Fitness() {
     const [active, setActive] = useState("")
