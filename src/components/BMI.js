@@ -5,10 +5,10 @@ import {
   CardHeader,
   CardBody,
   CardFooter,
-  Input,
   Button,
   Typography,
 } from "@material-tailwind/react";
+import {Container, Row, Col} from "react-bootstrap"
 
 function BMI() {
 
@@ -62,60 +62,11 @@ function BMI() {
 
 
   return (
-    <div>
-      <div className="flex flex-row justify-center  items-center gap-20">
-        <Card className="w-min bg-indigo-800 mt-12 ml-12 p-1">
-          <CardHeader
-            variant="gradient"
-            className="grid h-8 text-xl font-bold place-items-center border-2 border-indigo-800  bg-indigo-50 text-indigo-800"
-          >
-            {" "}
-            BMI
-          </CardHeader>
-          <CardBody className="flex flex-col gap-4">
-            <div className="flex flex-row justify-center gap-4">
-          <Typography
-                    variant="small"
-                    color="blue-gray"
-                    className="font-medium text-indigo-50 text-xl"
-                  >
-                    Age
-            </Typography>
-            <Input id="age" className="text-indigo-50" />
-            </div>
-            <div className="flex flex-row justify-center gap-4">
-          <Typography
-                    variant="small"
-                    color="blue-gray"
-                    className=" font-medium text-indigo-50 text-xl"
-                  >
-                    Weight
-            </Typography>
-            <Input id="weight" className="text-indigo-50" />
-            </div>
-            <div className="flex flex-row justify-center gap-4">
-          <Typography
-                    variant="small"
-                    color="blue-gray"
-                    className=" font-medium text-indigo-50 text-xl"
-                  >
-                    Height
-            </Typography>
-            <Input id="height" className="text-indigo-50" />
-            </div>
-          </CardBody>
-          <CardFooter className="pt-0">
-            <Button fullWidth className="text-indigo-800 bg-indigo-50" onClick={CalculateBMI}>
-              Calculate my BMI
-            </Button>
-          </CardFooter>
-        </Card>
-
-        <div className=" h-10  pt-1 border-2 border-indigo-800 rounded-lg px-8 max-w-1">
-          {bmiData.bmi} {bmiData.health}
-        </div>
-      </div>
-      <div className="md:flex flex-row justify-center  items-center gap-20 flex-nowrap mt-14">
+  <div>
+    <Container>
+     <Row>
+      <Col lg={6} sm={12}>
+      <div className="flex flex-col justify-center items-center mt-10 gap-4">
            <div className="box-border h-32 w-64 p-4 border-4 border-pink-200 rounded-md bg-pink-300 ">
             <p className="text-2xl font-bold text-center">Underweight</p>
             <p className="text-center font-semibold">Below 18.5</p>
@@ -133,8 +84,73 @@ function BMI() {
             <p className="text-center font-semibold">30.0 and Above</p>
            </div>
       </div>
-      
-    </div>
+      </Col>
+      <Col lg={6} sm={12}>
+        <div className=" flex mx-auto px-2 mt-28 mb-15">
+         <div className="flex max-w-md mx-auto md:max-w-xl">
+           <div className="md:flex">   
+            <Card className=" bg-indigo-800 mt-12 ml-8 p-1 mr-6">
+             <CardHeader
+              variant="gradient"
+              className="grid h-8 text-xl font-bold place-items-center border-2 border-indigo-800  bg-indigo-50 text-indigo-800"
+              >
+              {" "}
+              BMI
+             </CardHeader>
+             <CardBody className="flex flex-col gap-2">
+              <div className="flex flex-row  items-center gap-4 ">
+                <Typography
+                    variant="small"
+                    color="blue-gray"
+                    className=" pt-3 font-medium text-indigo-50 text-xl"
+                    style={{width: "100px"}}
+                >
+                    Age    
+               </Typography>
+               <input id="age"
+                 className="text-right text-indigo-50 bg-indigo-800 border w-full py-2 px-3  mt-2 rounded-md flex-1" />
+              </div>
+              <div className="flex flex-row items-center gap-4">
+               <Typography
+                    variant="small"
+                    color="blue-gray"
+                    className=" pt-3 font-medium text-indigo-50 text-xl"
+                    style={{width: "100px"}}
+                >
+                    Weight
+                </Typography>
+                <input id="weight"
+                   variant="outlined" label="Kg"
+                   placeholder="Kg" 
+                   className="text-right text-indigo-50 bg-indigo-800 border w-full py-2 px-3 form-input mt-2 rounded-md flex-1" />
+              </div>
+              <div className="flex flex-row items-center gap-4 shrink">
+                <Typography
+                    variant="small"
+                    color="blue-gray"
+                    className=" pt-3 font-medium text-indigo-50 text-xl"
+                    style={{width: "100px"}}
+                >
+                    Height
+                </Typography>
+                <input id="height"
+                    placeholder="cm" 
+                   className="text-right text-indigo-50 bg-indigo-800 border w-full py-2 px-3 form-input mt-2 rounded-md flex-1" />
+              </div>
+             </CardBody>
+             <CardFooter className="pt-0">
+              <Button fullWidth className="text-indigo-800 bg-indigo-50" onClick={CalculateBMI}>
+                Calculate my BMI
+              </Button>
+             </CardFooter>
+           </Card>
+          </div>
+        </div>
+      </div>
+     </Col>
+   </Row>
+  </Container>      
+</div>
   );
 }
 
