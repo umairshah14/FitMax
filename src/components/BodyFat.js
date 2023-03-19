@@ -9,7 +9,8 @@ import {
   Typography,
   
 } from "@material-tailwind/react";
-import {Container, Row, Col} from "react-bootstrap"
+import {Container, Row, Col,} from "react-bootstrap"
+import BodyFatTable from "./Table";
 
 function BodyFat() {
     const [bodyFatData, setBodyFatData] = useState({});
@@ -63,22 +64,26 @@ function BodyFat() {
 
       return ( <div>
         {bodyFatData.Category}
-        <Container>
+        <Container >
          <Row>
           <Col lg={6} sm={12}>
-          
+          <div className=" flex mx-auto mt-20">
+             <div className="flex max-w-md mx-auto md:max-w-xl">
+                 <BodyFatTable />
+             </div>
+          </div>
           </Col>
           <Col lg={6} sm={12}>
-            <div className=" flex mx-auto px-2 mt-20 mb-15">
+            <div className=" flex mx-auto px-2 mt-8 mb-15">
              <div className="flex max-w-md mx-auto md:max-w-xl">
                <div className="md:flex">   
-                <Card className=" bg-indigo-800 mt-12 ml-8 p-1 mr-6">
+                <Card className=" bg-indigo-800  ml-8 p-1 mr-6">
                  <CardHeader
                   variant="gradient"
                   className="grid h-8 text-xl font-bold place-items-center border-2 border-indigo-800  bg-indigo-50 text-indigo-800"
                   >
                   {" "}
-                  Daily Calories
+                  Body Fat
                  </CardHeader>
                  <CardBody className="flex flex-col gap-2">
                  <div className="flex flex-row  items-center gap-4 ">
