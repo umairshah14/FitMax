@@ -9,8 +9,14 @@
 
 .carouselParent
 {
-    height: 200px;
+    height: 700px;
     margin-bottom: 10%;
+}
+
+.imgSlider
+{
+    height: 700px;
+    width: 100%;
 }
 
 .metricsCard
