@@ -5,12 +5,12 @@ import {
   CardHeader,
   CardBody,
   CardFooter,
-  Input,
   Button,
   Typography,
-  Select,
-  Option,
+  
 } from "@material-tailwind/react";
+import {Container, Row, Col} from "react-bootstrap"
+
 
 function DailyCalorie() {
     const [calories, setCalories] = useState({});
@@ -56,91 +56,126 @@ function DailyCalorie() {
           });
       }, [personData.age, personData.gender, personData.height, personData.weight, personData.activitylevel]);
 
-      return ( <div>
-        <div className="flex flex-row justify-center  items-center gap-20">
-          <Card className="w-min bg-indigo-800 mt-12 ml-12 p-1">
-            <CardHeader
-              variant="gradient"
-              className="grid h-8 text-xl font-bold place-items-center border-2 border-indigo-800  bg-indigo-50 text-indigo-800"
-            >
-              Daily Calories
-            </CardHeader>
-            <CardBody className="flex flex-col gap-4">
-              <div className="flex flex-row gap-4">
-              <Typography
-                      variant="small"
-                      color="blue-gray"
-                      className="font-medium text-indigo-50 text-xl"
-                    >
-                    Gender
-              </Typography>
-              <Select size="md" className="text-indigo-50 px-1">
-                <Option>Male</Option>
-                <Option>Female</Option>
-              </Select>
+      return ( 
+      <div>
+        <Container>
+         <Row>
+          <Col lg={6} sm={12}>
+          <Container className="p-0 mt-14">
+           <Row>
+            <Col lg={6} md={6} sm={6}>
+             <div className="flex flex-col justify-center items-center mt-10 gap-4">
+               <div className="box-border h-36 w-auto p-3 border-4 border-indigo-800  bg-indigo-50 text-indigo-800 rounded-md  leading-4">
+                <p className="text-2xl font-bold text-center">Level 1</p>
+                <p className="text-center font-semibold">Sedentary little or no exercise</p>
+               </div>
+               <div className="box-border h-36 w-auto p-3 border-4 border-indigo-800  bg-indigo-50 text-indigo-800 rounded-md  leading-4">
+                <p className="text-2xl font-bold text-center">Level 2</p>
+                <p className="text-center font-semibold">Exercise 1-3 times/week</p>
+               </div>
+               <div className="box-border h-36 w-auto p-3 border-4 border-indigo-800  bg-indigo-50 text-indigo-800 rounded-md  leading-4">
+                <p className="text-2xl font-bold text-center">Level 3</p>
+                <p className="text-center font-semibold">Exercise 4-5 times/week</p>
+               </div>
               </div>
-              <div className="flex flex-row justify-center gap-4">
-            <Typography
-                      variant="small"
-                      color="blue-gray"
-                      className="font-medium text-indigo-50 text-xl"
+            </Col>
+            <Col lg={6} md={6} sm={6}>
+             <div className="flex flex-col justify-center items-center mt-10 gap-4">
+               <div className="box-border h-36 w-auto p-3 border-4 border-indigo-800  bg-indigo-50 text-indigo-800 rounded-md leading-4">
+                <p className="text-2xl font-bold text-center">Level 4</p>
+                <p className="text-center font-semibold">Daily exercise or intense exercie 3-4 times/week</p>
+               </div>
+               <div className="box-border h-36 w-auto p-3 border-4 border-indigo-800  bg-indigo-50 text-indigo-800 rounded-md  leading-4">
+                <p className="text-2xl font-bold text-center">Level 5</p>
+                <p className="text-center font-semibold">Intense exercie 6-7 times/week</p>
+               </div>
+               <div className="box-border h-36 w-auto p-3 border-4 border-indigo-800  bg-indigo-50 text-indigo-800 rounded-md leading-4">
+                <p className="text-2xl font-bold text-center">Level 6</p>
+                <p className="text-center font-semibold">Very Intense exercie daily, or Physical job</p>
+               </div>
+             </div>
+            </Col>
+           </Row>
+          </Container>
+          </Col>
+          <Col lg={6} sm={12}>
+            <div className=" flex mx-auto px-2 mt-20 mb-15">
+             <div className="flex max-w-md mx-auto md:max-w-xl">
+               <div className="md:flex">   
+                <Card className=" bg-indigo-800 mt-12 ml-8 p-1 mr-6">
+                 <CardHeader
+                  variant="gradient"
+                  className="grid h-8 text-xl font-bold place-items-center border-2 border-indigo-800  bg-indigo-50 text-indigo-800"
+                  >
+                  {" "}
+                  Daily Calories
+                 </CardHeader>
+                 <CardBody className="flex flex-col gap-2">
+                 <div className="flex flex-row  items-center gap-4 ">
+                    <Typography
+                        variant="small"
+                        color="blue-gray"
+                        className=" pt-3 font-medium text-indigo-50 text-xl"
+                        style={{width: "100px"}}
                     >
-                      Weight
-              </Typography>
-              <Input  className="text-indigo-50" />
-              </div>
-              <div className="flex flex-row justify-center gap-4">
-            <Typography
-                      variant="small"
-                      color="blue-gray"
-                      className=" font-medium text-indigo-50 text-xl"
+                        Gender   
+                   </Typography>
+                   <select className="text-right text-indigo-50 bg-indigo-800 border w-full py-2 px-3  mt-2 rounded-md flex-1">
+                      <option style={{display:"none"}}></option>
+                      <option>Male</option>
+                      <option>Female</option>
+                   </select>
+                  </div>
+                  <div className="flex flex-row  items-center gap-4 ">
+                    <Typography
+                        variant="small"
+                        color="blue-gray"
+                        className=" pt-3 font-medium text-indigo-50 text-xl"
+                        style={{width: "100px"}}
                     >
-                      Height 
-              </Typography>
-              <Input  className="text-indigo-50" />
-              </div>
-              <div className="flex flex-row justify-center gap-4">
-            <Typography
-                      variant="small"
-                      color="blue-gray"
-                      className=" font-medium text-indigo-50 text-xl"
+                        Weight    
+                   </Typography>
+                   <input
+                     className="text-right text-indigo-50 bg-indigo-800 border w-full py-2 px-3  mt-2 rounded-md flex-1" />
+                  </div>
+                  <div className="flex flex-row items-center gap-4">
+                   <Typography
+                        variant="small"
+                        color="blue-gray"
+                        className=" pt-3 font-medium text-indigo-50 text-xl"
+                        style={{width: "100px"}}
                     >
-                      Activity Level
-              </Typography>
-              <Input  className="text-indigo-50" />
+                        Height
+                    </Typography>
+                    <input 
+                       className="text-right text-indigo-50 bg-indigo-800 border w-full py-2 px-3 form-input mt-2 rounded-md flex-1" />
+                  </div>
+                  <div className="flex flex-row items-center gap-4 shrink">
+                    <Typography
+                        variant="small"
+                        color="blue-gray"
+                        className=" pt-3 font-medium text-indigo-50 text-xl"
+                        style={{width: "100px"}}
+                    >
+                        Activity level
+                    </Typography>
+                    <input
+                       className="text-right text-indigo-50 bg-indigo-800 border w-full py-2 px-3 form-input mt-2 rounded-md flex-1" />
+                  </div>
+                 </CardBody>
+                 <CardFooter className="pt-0">
+                  <Button fullWidth className="text-indigo-800 bg-indigo-50" /*onClick={}*/>
+                    Calculate Daily Calories
+                  </Button>
+                 </CardFooter>
+               </Card>
               </div>
-            </CardBody>
-            <CardFooter className="pt-0">
-              <Button fullWidth className="text-indigo-800 bg-indigo-50">
-                Calculate
-              </Button>
-            </CardFooter>
-          </Card>
-  
-          <div className=" h-10  pt-1 border-2 border-indigo-800 rounded-lg px-8 max-w-1">
-            {calories.BMR}
+            </div>
           </div>
-        </div>
-        <div className="md:flex flex-row justify-center  items-center gap-20 flex-nowrap mt-14">
-             <div className="box-border h-32 w-64 p-4 border-4 border-pink-200 rounded-md bg-pink-300 ">
-              <p className="text-2xl font-bold text-center"></p>
-              <p className="text-center font-semibold"></p>
-             </div>
-             <div className="box-border h-32 w-64 p-4 border-4 border-green-200 rounded-md bg-green-400">
-              <p className="text-2xl font-bold text-center"></p>
-              <p className="text-center font-semibold"></p>
-             </div>
-             <div className="box-border h-32 w-64 p-4 border-4 border-orange-200 rounded-md bg-orange-500 ">
-              <p className="text-2xl font-bold text-center"></p>
-              <p className="text-center font-semibold"></p>
-             </div>
-             <div className="box-border h-32 w-64 p-4 border-4 border-red-200 rounded-md bg-red-500">
-              <p className="text-2xl font-bold text-center"></p>
-              <p className="text-center font-semibold"></p>
-             </div>
-        </div>
-        
-      </div>);
+         </Col>
+       </Row>
+      </Container>      
+    </div>);
 
 }
 
