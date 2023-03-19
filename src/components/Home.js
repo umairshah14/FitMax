@@ -21,13 +21,13 @@ function Home() {
     
             <main>
                 {/* div for carousel */}
-                <div className="max-w- h-[50%] w-full m-auto py-16 px-4 relative">
+                <div className="carouselParent">
                     <div> <UncontrolledExample /> </div>
                 </div>
                 
                 {/* div for importance of health */}
-                <div>
-                    
+                <div className="">
+                    <h2> Hello World</h2>
                 </div>  
 
                 {/* div for our sponsors */}
