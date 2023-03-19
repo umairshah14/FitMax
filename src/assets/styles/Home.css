@@ -9,20 +9,20 @@
 
 .carouselParent
 {
-    width: 50%;
     height: 200px;
-    margin-bottom: 10%;
     margin-bottom: 10%;
 }
 
-.BMICardinHome, .FatCardinHome, .CaloriesCardinHome
-{
-    height: 250px;
-    width: 350px;
-    background-color: var(--backgroundColor);
-}
 .metricsCard
 {
     background-color: var(--backgroundColor);
     color: var(--secondaryTextColor);
+}
+
+.BMICardinHome, .FatCardinHome, .CaloriesCardinHome
+{
+    background-color: var(--metricsCard);
+    color: var(--secondaryTextColor);
+    text-align: center;
+    
 }

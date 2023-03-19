@@ -1,6 +1,7 @@
 
 import { Row, Col} from "react-bootstrap";
 import UncontrolledExample from "./bootstrapCarousel";
+import '../assets/styles/Home.css';
 
 function Home() {
 
@@ -9,9 +10,9 @@ function Home() {
     
             <main>
                 {/* div for carousel */}
-                <div className="carouselParent">
+                <section className="carouselParent">
                     <div> <UncontrolledExample /> </div>
-                </div>
+                </section>
                 
                 {/* div for importance of health */}
                 <section className="metricsCard">
