@@ -1,44 +1,53 @@
 
+import { Row, Col} from "react-bootstrap";
 import UncontrolledExample from "./bootstrapCarousel";
 
 function Home() {
-
-    // const slides = 
-    // [
-    //     {
-    //         url: "../assets/images/running.jpg"
-    //     },
-    //     {
-    //         url: "./assets/images/running2.jpg"
-    //     },
-    //     {
-    //         url: "./assets/images/old_people.jpg"
-    //     },
-    // ];
 
     return (
         <>
     
             <main>
                 {/* div for carousel */}
-                <div className="max-w- h-[50%] w-full m-auto py-16 px-4 relative">
+                <div className="carouselParent">
                     <div> <UncontrolledExample /> </div>
                 </div>
                 
                 {/* div for importance of health */}
-                <div>
+                <section className="metricsCard">
+                    <Row>
+                        <Col className="BMICardinHome" lg={4} sm={12}>
+                            <div>
+                                <h2>BMI</h2>
+                            </div>
+                        </Col>
+
+                        <Col className="FatCardinHome" lg={4} sm={12}>
+                            <div>
+                                <h2>Fat</h2>
+                            </div>
+                        </Col>
+
+                        <Col className="CaloriesCardinHome" lg={4} sm={12}>
+                            <div>
+                                <h2>Calories</h2>
+                            </div>
+                        </Col>
+                    </Row>
                     
-                </div>  
+                </section>  
 
-                {/* div for our sponsors */}
-                <div className="sponsors">
-
-                </div>
+                {/* div for our BMI Info. */}
+                <section className="bmiInfo">
+                    <Row>
+                        
+                    </Row>
+                </section>
 
                 {/* div for google ads */}
-                <div>
+                <section>
 
-                </div>
+                </section>
             </main>    
         </>
     );
