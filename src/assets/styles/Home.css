@@ -1,9 +1,28 @@
 /* max-w-[1200px] h-[200px] w-full m-auto py-16 px-4 relative */
+:root
+{
+    --backgroundColor: #142738;
+    --metricsCard: white;
+    --textColor: white;
+    --secondaryTextColor: #142738; 
+}
 
 .carouselParent
 {
     width: 50%;
-    height: 70%;
+    height: 200px;
     margin-bottom: 10%;
     margin-bottom: 10%;
+}
+
+.BMICardinHome, .FatCardinHome, .CaloriesCardinHome
+{
+    height: 250px;
+    width: 350px;
+    background-color: var(--backgroundColor);
+}
+.metricsCard
+{
+    background-color: var(--backgroundColor);
+    color: var(--secondaryTextColor);
 }

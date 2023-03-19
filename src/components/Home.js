@@ -1,4 +1,5 @@
 
+import { Row, Col} from "react-bootstrap";
 import UncontrolledExample from "./bootstrapCarousel";
 
 function Home() {
@@ -13,22 +14,40 @@ function Home() {
                 </div>
                 
                 {/* div for importance of health */}
-                <div className="metricsCard">
+                <section className="metricsCard">
                     <Row>
+                        <Col className="BMICardinHome" lg={4} sm={12}>
+                            <div>
+                                <h2>BMI</h2>
+                            </div>
+                        </Col>
 
+                        <Col className="FatCardinHome" lg={4} sm={12}>
+                            <div>
+                                <h2>Fat</h2>
+                            </div>
+                        </Col>
+
+                        <Col className="CaloriesCardinHome" lg={4} sm={12}>
+                            <div>
+                                <h2>Calories</h2>
+                            </div>
+                        </Col>
                     </Row>
                     
-                </div>  
+                </section>  
 
-                {/* div for our sponsors */}
-                <div className="sponsors">
-
-                </div>
+                {/* div for our BMI Info. */}
+                <section className="bmiInfo">
+                    <Row>
+                        
+                    </Row>
+                </section>
 
                 {/* div for google ads */}
-                <div>
+                <section>
 
-                </div>
+                </section>
             </main>    
         </>
     );
