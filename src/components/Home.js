@@ -3,19 +3,6 @@ import UncontrolledExample from "./bootstrapCarousel";
 
 function Home() {
 
-    // const slides = 
-    // [
-    //     {
-    //         url: "../assets/images/running.jpg"
-    //     },
-    //     {
-    //         url: "./assets/images/running2.jpg"
-    //     },
-    //     {
-    //         url: "./assets/images/old_people.jpg"
-    //     },
-    // ];
-
     return (
         <>
     
@@ -26,8 +13,11 @@ function Home() {
                 </div>
                 
                 {/* div for importance of health */}
-                <div className="">
-                    <h2> Hello World</h2>
+                <div className="metricsCard">
+                    <Row>
+
+                    </Row>
+                    
                 </div>  
 
                 {/* div for our sponsors */}
