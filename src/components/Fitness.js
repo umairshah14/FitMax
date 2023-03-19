@@ -1,10 +1,11 @@
 import BMI from "./BMI";
 import DailyCalorie from "./DailyCalorie";
 import {Button,} from "@material-tailwind/react"
- import { useState } from "react";
+import { useState } from "react";
+import {Container, Row, Col} from "react-bootstrap"
 
 function Fitness() {
-    const [active, setActive] = useState("")
+    const [active, setActive] = useState("BMI")
 
     return (
         <div>
@@ -14,11 +15,21 @@ function Fitness() {
             <Button  className="text-indigo-800 bg-indigo-50" onClick={() => setActive("DailyCalories")}>
                Daily Calories
             </Button>
-            <div>
+            <Container className="mt-10">
+              <Row >
+              <Col lg={8} className="mb-10">
                 {active === "BMI" && <BMI />}
                 {active === "DailyCalories" && <DailyCalorie />}
-            </div>
-            <div></div>
+              </Col>
+              <Col lg={4} className=" pt-2 border-2 border-indigo-800 rounded-lg px-8">
+                
+                  <p><span className="font-bold text-xl">Your BMI is: </span></p>
+                  <p><span className="font-bold text-xl">Your Health is: </span></p> 
+               
+              </Col>
+              </Row>  
+            </Container>
+            
         </div>
     );
 
