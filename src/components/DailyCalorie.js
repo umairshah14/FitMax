@@ -159,8 +159,15 @@ function DailyCalorie() {
                     >
                         Activity level
                     </Typography>
-                    <input
-                       className="text-right text-indigo-50 bg-indigo-800 border w-full py-2 px-3 form-input mt-2 rounded-md flex-1" />
+                    <select className="text-right text-indigo-50 bg-indigo-800 border w-full py-2 px-3  mt-2 rounded-md flex-1">
+                      <option style={{display:"none"}}></option>
+                      <option>Level 1</option>
+                      <option>Level 2</option>
+                      <option>Level 3</option>
+                      <option>Level 4</option>
+                      <option>Level 5</option>
+                      <option>Level 6</option>
+                   </select>
                   </div>
                  </CardBody>
                  <CardFooter className="pt-0">
