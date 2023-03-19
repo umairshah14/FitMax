@@ -1,5 +1,15 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import {
+  Card,
+  CardHeader,
+  CardBody,
+  CardFooter,
+  Button,
+  Typography,
+  
+} from "@material-tailwind/react";
+import {Container, Row, Col} from "react-bootstrap"
 
 function BodyFat() {
     const [bodyFatData, setBodyFatData] = useState({});
@@ -51,7 +61,116 @@ function BodyFat() {
           });
       }, [personData.age, personData.gender, personData.height, personData.weight, personData.neck, personData.waist, personData.hip]);
 
-      return ( <div>{bodyFatData.Category}</div>);
+      return ( <div>
+        {bodyFatData.Category}
+        <Container>
+         <Row>
+          <Col lg={6} sm={12}>
+          
+          </Col>
+          <Col lg={6} sm={12}>
+            <div className=" flex mx-auto px-2 mt-20 mb-15">
+             <div className="flex max-w-md mx-auto md:max-w-xl">
+               <div className="md:flex">   
+                <Card className=" bg-indigo-800 mt-12 ml-8 p-1 mr-6">
+                 <CardHeader
+                  variant="gradient"
+                  className="grid h-8 text-xl font-bold place-items-center border-2 border-indigo-800  bg-indigo-50 text-indigo-800"
+                  >
+                  {" "}
+                  Daily Calories
+                 </CardHeader>
+                 <CardBody className="flex flex-col gap-2">
+                 <div className="flex flex-row  items-center gap-4 ">
+                    <Typography
+                        variant="small"
+                        color="blue-gray"
+                        className=" pt-3 font-medium text-indigo-50 text-xl"
+                        style={{width: "100px"}}
+                    >
+                        Gender   
+                   </Typography>
+                   <select className="text-right text-indigo-50 bg-indigo-800 border w-full py-2 px-3  mt-2 rounded-md flex-1">
+                      <option style={{display:"none"}}></option>
+                      <option>Male</option>
+                      <option>Female</option>
+                   </select>
+                  </div>
+                  <div className="flex flex-row  items-center gap-4 ">
+                    <Typography
+                        variant="small"
+                        color="blue-gray"
+                        className=" pt-3 font-medium text-indigo-50 text-xl"
+                        style={{width: "100px"}}
+                    >
+                        Weight    
+                   </Typography>
+                   <input
+                     className="text-right text-indigo-50 bg-indigo-800 border w-full py-2 px-3  mt-2 rounded-md flex-1" />
+                  </div>
+                  <div className="flex flex-row items-center gap-4">
+                   <Typography
+                        variant="small"
+                        color="blue-gray"
+                        className=" pt-3 font-medium text-indigo-50 text-xl"
+                        style={{width: "100px"}}
+                    >
+                        Height
+                    </Typography>
+                    <input 
+                       className="text-right text-indigo-50 bg-indigo-800 border w-full py-2 px-3 form-input mt-2 rounded-md flex-1" />
+                  </div>
+                  <div className="flex flex-row items-center gap-4 shrink">
+                    <Typography
+                        variant="small"
+                        color="blue-gray"
+                        className=" pt-3 font-medium text-indigo-50 text-xl"
+                        style={{width: "100px"}}
+                    >
+                        Waist
+                    </Typography>
+                    <input
+                       className="text-right text-indigo-50 bg-indigo-800 border w-full py-2 px-3 form-input mt-2 rounded-md flex-1" />
+                  </div>
+                  <div className="flex flex-row items-center gap-4 shrink">
+                    <Typography
+                        variant="small"
+                        color="blue-gray"
+                        className=" pt-3 font-medium text-indigo-50 text-xl"
+                        style={{width: "100px"}}
+                    >
+                        Neck
+                    </Typography>
+                    <input
+                       className="text-right text-indigo-50 bg-indigo-800 border w-full py-2 px-3 form-input mt-2 rounded-md flex-1" />
+                  </div>
+                  <div className="flex flex-row items-center gap-4 shrink">
+                    <Typography
+                        variant="small"
+                        color="blue-gray"
+                        className=" pt-3 font-medium text-indigo-50 text-xl"
+                        style={{width: "100px"}}
+                    >
+                        Hip
+                    </Typography>
+                    <input
+                       className="text-right text-indigo-50 bg-indigo-800 border w-full py-2 px-3 form-input mt-2 rounded-md flex-1" />
+                  </div>
+                 </CardBody>
+                 <CardFooter className="pt-0">
+                  <Button fullWidth className="text-indigo-800 bg-indigo-50" /*onClick={}*/>
+                    Calculate Body Fat
+                  </Button>
+                 </CardFooter>
+               </Card>
+              </div>
+            </div>
+          </div>
+         </Col>
+       </Row>
+      </Container>      
+        
+        </div>);
 
 }
 
