@@ -12,7 +12,7 @@ import {Container, Row, Col} from "react-bootstrap"
 
 function BMI() {
 
-  const [bmiData, setBmiData] = useState({});
+  const [bmiData, setBmiData] = useState();
 
   const [bodyData, setBodyData] = useState({});
 
@@ -35,21 +35,32 @@ function BMI() {
         axios
       .request(options)
       .then(function (response) {
+        let h = "";
+        if(response.data.data.bmi < 18.5) {
+          h= "Underweight";
+        } else if(18.5 <= response.data.data.bmi && response.data.data.bmi  < 25) {
+          h= "Healty weight";
+        } else if(25 <= response.data.data.bmi && response.data.data.bmi < 30) {
+          h= "Overweight";
+        } else if(response.data.data.bmi >= 30) {
+          h= "Obesity";
+        }
         setBmiData({
             bmi:response.data.data.bmi,
-            health:response.data.data.health
+            health: h
         });
       })
       .catch(function (error) {
-        console.error(error);
+        alert("Please check your inputs!")
       });
-
-    //   document.getElementById("age").value = "";
-    //   document.getElementById("height").value = "";
-    //   document.getElementById("weight").value = "";
     }
-
   }, [bodyData, bodyData.age, bodyData.height, bodyData.weight]);
+
+  useEffect(() => {
+    if(bmiData){
+      localStorage.setItem("bmiData", JSON.stringify(bmiData));
+    }
+  }, [bmiData]);
 
   const CalculateBMI = () => {
     setBodyData({
@@ -58,8 +69,6 @@ function BMI() {
         weight: document.getElementById("weight").value,
     });
   }
-
-
 
   return (
   <div>
