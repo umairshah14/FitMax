@@ -62,7 +62,7 @@ function BodyFat() {
       }, [personData.age, personData.gender, personData.height, personData.weight, personData.neck, personData.waist, personData.hip]);
 
       return ( <div>
-        {/*{bodyFatData.Category}*/}
+        {bodyFatData.Category}
         <Container>
          <Row>
           <Col lg={6} sm={12}>
