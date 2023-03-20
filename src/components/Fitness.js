@@ -12,8 +12,8 @@ function Fitness() {
     const [localData, setLocalData] = useState();
 
     const [resultData, setResultData] = useState({
-        bmi: JSON.parse(localStorage.getItem("bmiData")).bmi,
-        health: JSON.parse(localStorage.getItem("bmiData")).health
+        bmi: JSON.parse(localStorage.getItem("bmiData")).bmi ? JSON.parse(localStorage.getItem("bmiData")).bmi : "",
+        health: JSON.parse(localStorage.getItem("bmiData")).health ? JSON.parse(localStorage.getItem("bmiData")).health : ""
     });
 
     useEffect(() => {
