@@ -85,6 +85,7 @@ function BMI() {
            </div>
       </div>
       </Col>
+      
       <Col lg={6} sm={12}>
         <div className=" flex mx-auto px-2 mt-28 mb-15">
          <div className="flex max-w-md mx-auto md:max-w-xl">
