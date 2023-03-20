@@ -27,7 +27,6 @@ function Fitness() {
 
     const getLocal= () => {
         const local = JSON.parse(localStorage.getItem("bmiData"));
-        console.log(local);
         if(local) {
             setLocalData({
                 bmi: local.bmi,
