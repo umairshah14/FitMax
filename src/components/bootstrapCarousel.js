@@ -10,7 +10,7 @@ function UncontrolledExample() {
       <Carousel> {/* carousel parent container */}
         <Carousel.Item> {/* carousel container for the 1st image  */}
           <img
-            className="d-block w-100"
+            className="imgSlider"
             src={running}
             alt="running before sunrise"
           />
@@ -22,7 +22,7 @@ function UncontrolledExample() {
 
         <Carousel.Item> {/* carousel container for the 2nd image  */}
           <img
-            className="d-block w-100"
+            className="imgSlider"
             src= {old_people}
             alt="old people exercising"
           />
@@ -36,7 +36,7 @@ function UncontrolledExample() {
         
         <Carousel.Item> {/* carousel container for the 3rd image  */}
           <img
-            className="d-block w-100"
+            className="imgSlider"
             src= {running_2}
             alt="home_workouts"
           />
