@@ -10,7 +10,7 @@ import {
 } from "@material-tailwind/react";
 import {Container, Row, Col} from "react-bootstrap"
 
-function BMI() {
+function BMI(props) {
 
   const [bmiData, setBmiData] = useState();
 
@@ -59,6 +59,7 @@ function BMI() {
   useEffect(() => {
     if(bmiData){
       localStorage.setItem("bmiData", JSON.stringify(bmiData));
+      props.getLocal();
     }
   }, [bmiData]);
 
