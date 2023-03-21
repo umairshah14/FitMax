@@ -28,11 +28,9 @@ function Fitness() {
         bmi: localStorage.getItem("report") ? JSON.parse(localStorage.getItem("report")).bmi : "",
         health: localStorage.getItem("report") ? JSON.parse(localStorage.getItem("report")).health : "",
         fat: localStorage.getItem("report") ? JSON.parse(localStorage.getItem("report")).fat : "",
-        calorie: localStorage.getItem("report") ? JSON.parse(localStorage.getItem("report")).calorie : ""
+        calorie: localStorage.getItem("report") ? JSON.parse(localStorage.getItem("report")).calorie : "",
+        ideal: localStorage.getItem("report") ? JSON.parse(localStorage.getItem("report")).ideal : ""
     });
-    // useEffect(() => {
-    //     getLocal();
-    // }, [active])
 
     useEffect(() => {
         if(localData) {
@@ -40,10 +38,10 @@ function Fitness() {
                 bmi: localData.bmi,
                 health: localData.health,
                 fat: localData.fat,
-                calorie: localData.calorie
+                calorie: localData.calorie,
+                ideal: localData.ideal
             });
         }
-        console.log(resultData);
     }, [localData]);
 
     const getLocal= () => {
@@ -53,7 +51,8 @@ function Fitness() {
                 bmi: report.bmi,
                 health: report.health,
                 fat: report.fat,
-                calorie: report.calorie
+                calorie: report.calorie,
+                ideal: report.ideal
             })
         }
     };
@@ -84,7 +83,7 @@ function Fitness() {
                 {searchTerm === "BMI" && <BMI getLocal={getLocal}/>}
                 {searchTerm === "DailyCalories" && <DailyCalorie getLocal={getLocal}/>}
                 {searchTerm === "BodyFat" && <BodyFat getLocal={getLocal}/>}
-                {searchTerm === "IdealWeight" && <IdealWeight />}
+                {searchTerm === "IdealWeight" && <IdealWeight getLocal={getLocal}/>}
               </Col>
               <Col lg={4} className=" pt-2 border-2 border-indigo-800 rounded-lg px-8">
                 
@@ -92,6 +91,7 @@ function Fitness() {
                   <p><span className="font-bold text-xl">Your Health is: </span>{resultData.health}</p> 
                   <p><span className="font-bold text-xl">Your Body Fat Percentage is: </span>{resultData.fat}</p> 
                   <p><span className="font-bold text-xl">Calorie to Maintain Weight is: </span>{resultData.calorie}</p> 
+                  <p><span className="font-bold text-xl">Your Ideal Weight is: </span>{resultData.ideal}</p> 
                
               </Col>
               </Row>  

@@ -13,7 +13,7 @@ import {Container, Row, Col,} from "react-bootstrap"
 import BodyFatTable from "./Table";
 
 function BodyFat(props) {
-    const [bodyFatData, setBodyFatData] = useState({});
+    const [bodyFatData, setBodyFatData] = useState();
 
     const [bodyData, setBodyData] = useState({});
 
@@ -55,7 +55,8 @@ function BodyFat(props) {
                 bmi:report ? report.bmi : "",
                 health: report ? report.health : "",
                 fat: bodyFatData.fat,
-                calorie: report ? report.calorie : ""
+                calorie: report ? report.calorie : "",
+                ideal: report ? report.ideal : ""
           }));
           props.getLocal();
         }
@@ -79,14 +80,14 @@ function BodyFat(props) {
         <Container >
          <Row>
           <Col lg={6} sm={12}>
-          <div className=" flex mx-auto mt-20">
+          <div className=" flex mx-auto">
              <div className="flex max-w-md mx-auto md:max-w-xl">
                  <BodyFatTable />
              </div>
           </div>
           </Col>
           <Col lg={6} sm={12}>
-            <div className=" flex mx-auto px-2 mt-8 mb-15">
+            <div className=" flex mx-auto mt-12 px-2 ">
              <div className="flex max-w-md mx-auto md:max-w-xl">
                <div className="md:flex">   
                 <Card className=" bg-maincolor border-2 border-secondcolor  ml-8 p-1 mr-6">
@@ -107,7 +108,7 @@ function BodyFat(props) {
                         Age    
                   </Typography>
                   <input id="age"
-                    className="text-right text-indigo-50 bg-indigo-800 border w-full py-2 px-3  mt-2 rounded-md flex-1" />
+                    className="text-right text-indigo-50 bg-maincolor border w-full py-2 px-3  mt-2 rounded-md flex-1" />
                 </div>
                  <div className="flex flex-row  items-center gap-4 ">
                     <Typography
@@ -118,7 +119,7 @@ function BodyFat(props) {
                     >
                         Gender   
                    </Typography>
-                   <select id="gender" className="text-right text-indigo-50 bg-indigo-800 border w-full py-2 px-3  mt-2 rounded-md flex-1">
+                   <select id="gender" className="text-right text-indigo-50 bg-maincolor border w-full py-2 px-3  mt-2 rounded-md flex-1">
 
                       <option style={{display:"none"}}></option>
                       <option>Male</option>
@@ -136,7 +137,7 @@ function BodyFat(props) {
                    </Typography>
                    <input id="weight"
                    placeholder="kg"
-                     className="text-right text-indigo-50 bg-indigo-800 border w-full py-2 px-3  mt-2 rounded-md flex-1" />
+                     className="text-right text-indigo-50 bg-maincolor border w-full py-2 px-3  mt-2 rounded-md flex-1" />
 
                   </div>
                   <div className="flex flex-row items-center gap-4">
@@ -149,7 +150,7 @@ function BodyFat(props) {
                         Height
                     </Typography>
 
-                    <input id="height" placeholder="kg" className="text-right text-indigo-50 bg-indigo-800 border w-full py-2 px-3 form-input mt-2 rounded-md flex-1" />
+                    <input id="height" placeholder="cm" className="text-right text-indigo-50 bg-maincolor border w-full py-2 px-3 form-input mt-2 rounded-md flex-1" />
                   </div>
                   <div className="flex flex-row items-center gap-4 shrink">
                     <Typography
@@ -162,7 +163,7 @@ function BodyFat(props) {
                     </Typography>
 
                     <input id="waist" placeholder="cm"
-                       className="text-right text-indigo-50 bg-indigo-800 border w-full py-2 px-3 form-input mt-2 rounded-md flex-1" />
+                       className="text-right text-indigo-50 bg-maincolor border w-full py-2 px-3 form-input mt-2 rounded-md flex-1" />
 
                   </div>
                   <div className="flex flex-row items-center gap-4 shrink">
@@ -176,7 +177,7 @@ function BodyFat(props) {
                     </Typography>
 
                     <input id="neck" placeholder="cm"
-                       className="text-right text-indigo-50 bg-indigo-800 border w-full py-2 px-3 form-input mt-2 rounded-md flex-1" />
+                       className="text-right text-indigo-50 bg-maincolor border w-full py-2 px-3 form-input mt-2 rounded-md flex-1" />
 
                   </div>
                   <div className="flex flex-row items-center gap-4 shrink">
@@ -197,7 +198,7 @@ function BodyFat(props) {
                  <CardFooter className="pt-0">
                   <Button fullWidth className="text-indigo-800 bg-indigo-50" onClick={CalculateBodyFat}>
 
-                    Calculate Body Fat
+                    Calculate
                   </Button>
                  </CardFooter>
                </Card>
