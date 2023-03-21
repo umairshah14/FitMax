@@ -86,12 +86,13 @@ function Fitness() {
                 {searchTerm === "BodyFat" && <BodyFat getLocal={getLocal}/>}
                 {searchTerm === "IdealWeight" && <IdealWeight />}
               </Col>
-              <Col lg={4} className=" pt-2 border-2 border-indigo-800 rounded-lg px-8">
-                
+              <Col lg={4} style={{height: "fit-content"}} className=" pt-2 border-2 border-secondcolor rounded-lg bg-indigo-50 px-8">
+                <div >
                   <p><span className="font-bold text-xl">Your BMI is: </span>{resultData.bmi}</p>
                   <p><span className="font-bold text-xl">Your Health is: </span>{resultData.health}</p> 
                   <p><span className="font-bold text-xl">Your Body Fat Percentage is: </span>{resultData.fat}</p> 
                   <p><span className="font-bold text-xl">Calorie to Maintain Weight is: </span>{resultData.calorie}</p> 
+                  <p><span className="font-bold text-xl">Your Ideal Weight is: </span>{resultData.ideal}</p> 
                
               </Col>
               </Row>  
