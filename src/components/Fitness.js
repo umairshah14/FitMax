@@ -42,7 +42,6 @@ function Fitness() {
                 ideal: localData.ideal
             });
         }
-        console.log(resultData);
     }, [localData]);
 
     const getLocal= () => {
