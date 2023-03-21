@@ -57,7 +57,7 @@ function IdealWeight() {
       <Container>
        <Row>
         <Col lg={6} sm={12}>
-         <div className="mt-20">
+         <div>
             <div className="box-border h-auto w-auto leading-5 py-3 border-4 border-secondcolor bg-indigo-50 text-maincolor rounded-md  leading-4">
                 <h2 className="text-2xl font-bold text-center underline">HAMWI METHOD</h2>
                 <p className="text-center font-semibold">The Hamwi method is used to calculate the ideal body weight 
@@ -68,7 +68,7 @@ function IdealWeight() {
         </div>
         </Col>
         <Col lg={6} sm={12}>
-        <div className=" flex mx-auto px-2 mt-18 mb-15">
+        <div className=" flex mx-auto px-2">
          <div className="flex max-w-md mx-auto md:max-w-xl">
            <div className="md:flex">   
             <Card className=" bg-maincolor border-2 border-secondcolor mt-12 ml-8 p-1 mr-6">
@@ -76,7 +76,6 @@ function IdealWeight() {
               variant="gradient"
               className="grid h-8 text-xl font-bold place-items-center border-2 border-secondcolor  bg-indigo-50 text-maincolor"
               >
-              {" "}
               Ideal Weight
              </CardHeader>
              <CardBody className="flex flex-col gap-2">
@@ -124,7 +123,7 @@ function IdealWeight() {
              </CardBody>
              <CardFooter className="pt-0">
               <Button fullWidth className="text-indigo-800 bg-indigo-50 text-maincolor" onClick={CalculateIdeal}>
-                Calculate my BMI
+                Calculate
               </Button>
              </CardFooter>
            </Card>
