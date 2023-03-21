@@ -17,7 +17,7 @@ function UncontrolledExample() {
           />
           <Carousel.Caption className='imgCaption'> {/* carousel container for the 1st image's caption  */}
             <h3> Benefits of a morning run</h3>
-            <p> <a href= "https://www.shape.com/fitness/cardio/5-reasons-mornings-are-best-time-run"> Learn More </a>  </p>
+            <p> <a href= "https://www.shape.com/fitness/cardio/5-reasons-mornings-are-best-time-run" target={"_blank"}> Learn More </a>  </p>
           </Carousel.Caption>
         </Carousel.Item>
 
@@ -30,7 +30,7 @@ function UncontrolledExample() {
 
           <Carousel.Caption className='imgCaption'> {/* carousel container for the 2nd image's caption */}
             <h3>Why staying active after 50 reduces health risk  </h3>
-            <p> <a href = "https://www.fitandwell.com/features/benefits-of-exercise-over-50"> Learn more </a> </p>
+            <p> <a href = "https://www.fitandwell.com/features/benefits-of-exercise-over-50" target={"_blank"}> Learn more </a> </p>
           </Carousel.Caption>
         </Carousel.Item>
 
@@ -43,7 +43,7 @@ function UncontrolledExample() {
 
           <Carousel.Caption className='imgCaption'> {/* carousel container for the 2nd image's caption */}
             <h3> It's never too late to start exercising.   </h3>
-            <p> <a href="https://www.nhs.uk/live-well/exercise/exercise-health-benefits/"> Learn more </a> </p>
+            <p> <a href="https://www.nhs.uk/live-well/exercise/exercise-health-benefits/" target={"_blank"}> Learn more </a> </p>
           </Carousel.Caption>
         </Carousel.Item>
         

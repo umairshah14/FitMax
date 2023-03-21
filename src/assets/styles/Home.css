@@ -47,6 +47,12 @@ main
     margin-bottom: 2%;
 }
 
+/* row of each card metric */
+.metricsRow
+{
+    margin-bottom: 5%;
+}
+
 /* heading  of each metric card */
 .metricsCard
 {
@@ -72,21 +78,6 @@ main
     margin-left: -5%;
 }
 
-.metricsRow
-{
-    margin-bottom: 5%;
-}
 
-
-
-/* footer */
-footer
-{
-    border-top: 1px solid white;
-    color:var(--textColor);
-    display: flex;
-    align-items: space-evenly;
-    justify-content: flex-start;
-}
 
 
