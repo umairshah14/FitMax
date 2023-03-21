@@ -11,7 +11,7 @@ import {
 
 export default function Footer() {
   return (
-    <MDBFooter className="text-center text-white text-lg-left border-secondcolor border-1" style={{backgroundColor:"black"}}>
+    <MDBFooter className="text-center text-white text-lg-left border-none border-1" >
       <MDBContainer className="p-4 pb-0">
         <form action="">
           <MDBRow className="d-flex justify-content-center">
