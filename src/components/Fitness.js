@@ -12,26 +12,36 @@ function Fitness() {
     const [localData, setLocalData] = useState();
 
     const [resultData, setResultData] = useState({
-        bmi: localStorage.getItem("bmiData") ? JSON.parse(localStorage.getItem("bmiData")).bmi : "",
-        health: localStorage.getItem("bmiData") ? JSON.parse(localStorage.getItem("bmiData")).health : ""
+        bmi: localStorage.getItem("report") ? JSON.parse(localStorage.getItem("report")).bmi : "",
+        health: localStorage.getItem("report") ? JSON.parse(localStorage.getItem("report")).health : "",
+        fat: localStorage.getItem("report") ? JSON.parse(localStorage.getItem("report")).fat : "",
+        calorie: localStorage.getItem("report") ? JSON.parse(localStorage.getItem("report")).calorie : ""
     });
+    // useEffect(() => {
+    //     getLocal();
+    // }, [active])
 
     useEffect(() => {
         if(localData) {
             setResultData({
                 bmi: localData.bmi,
-                health: localData.health
-            })
+                health: localData.health,
+                fat: localData.fat,
+                calorie: localData.calorie
+            });
         }
+        console.log(resultData);
     }, [localData]);
 
     const getLocal= () => {
-        const local = JSON.parse(localStorage.getItem("bmiData"));
-        if(local) {
+        const report = JSON.parse(localStorage.getItem("report"));
+        if(report) {
             setLocalData({
-                bmi: local.bmi,
-                health: local.health
-            });
+                bmi: report.bmi,
+                health: report.health,
+                fat: report.fat,
+                calorie: report.calorie
+            })
         }
     };
 
@@ -53,14 +63,16 @@ function Fitness() {
               <Row >
               <Col lg={8} className="mb-10">
                 {active === "BMI" && <BMI getLocal={getLocal}/>}
-                {active === "DailyCalories" && <DailyCalorie />}
-                {active === "BodyFat" && <BodyFat />}
+                {active === "DailyCalories" && <DailyCalorie getLocal={getLocal}/>}
+                {active === "BodyFat" && <BodyFat getLocal={getLocal}/>}
                 {active === "IdealWeight" && <IdealWeight />}
               </Col>
               <Col lg={4} className=" pt-2 border-2 border-indigo-800 rounded-lg px-8">
                 
                   <p><span className="font-bold text-xl">Your BMI is: </span>{resultData.bmi}</p>
                   <p><span className="font-bold text-xl">Your Health is: </span>{resultData.health}</p> 
+                  <p><span className="font-bold text-xl">Your Body Fat Percentage is: </span>{resultData.fat}</p> 
+                  <p><span className="font-bold text-xl">Calorie to Maintain Weight is: </span>{resultData.calorie}</p> 
                
               </Col>
               </Row>  
