@@ -12,25 +12,12 @@ import {
 import {Container, Row, Col} from "react-bootstrap"
 
 
-function DailyCalorie() {
-    const [calories, setCalories] = useState({});
+function DailyCalorie(props) {
+    const [calorieData, setCalorie] = useState();
 
-    const [personData, setPersonData] = useState({
-        age: '25',
-        gender: 'male',
-        height: '180',
-        weight: '70',
-        activitylevel: 'level_1'
-    });
+    const [personData, setPersonData] = useState({});
 
     useEffect(() => {
-        setPersonData({
-            age: '25',
-            gender: 'female',
-            height: '170',
-            weight: '70',
-            activitylevel: 'level_2'
-        });
         const options = {
             method: 'GET',
             url: 'https://fitness-calculator.p.rapidapi.com/dailycalorie',
@@ -46,15 +33,38 @@ function DailyCalorie() {
               'X-RapidAPI-Host': 'fitness-calculator.p.rapidapi.com'
             }
           };
-          
-          axios.request(options).then(function (response) {
-              setCalories({
-                BMR: response.data.data.BMR
-               });
-          }).catch(function (error) {
-              console.error(error);
-          });
-      }, [personData.age, personData.gender, personData.height, personData.weight, personData.activitylevel]);
+
+          if(Object.keys(personData).length !== 0) {
+            axios.request(options).then(function (response) {
+              setCalorie({calorie:response.data.data.goals["maintain weight"]});
+            }).catch(function (error) {
+              alert("Please check your inputs!");
+            });
+          }
+      }, [personData, personData.age, personData.gender, personData.height, personData.weight, personData.activitylevel]);
+
+      useEffect(() => {
+        if(calorieData){
+          const report = JSON.parse(localStorage.getItem("report"));
+            localStorage.setItem("report",JSON.stringify({
+              bmi:report ? report.bmi : "",
+              health: report ? report.health : "",
+              fat: report ? report.fat : "",
+              calorie: calorieData.calorie
+          }));
+          props.getLocal();
+        }
+      }, [calorieData]);
+
+      const CalculateCalorie = () => {
+        setPersonData({
+            age: document.getElementById("age").value,
+            gender: document.getElementById("gender").value.toLowerCase(),
+            height: document.getElementById("height").value,
+            weight: document.getElementById("weight").value,
+            activitylevel: document.getElementById("actLevel").value,
+        });
+      }
 
       return ( 
       <div>
@@ -107,10 +117,22 @@ function DailyCalorie() {
                   variant="gradient"
                   className="grid h-8 text-xl font-bold place-items-center border-2 border-secondcolor  bg-indigo-50 text-maincolor"
                   >
-                  {" "}
+                  
                   Daily Calories
                  </CardHeader>
                  <CardBody className="flex flex-col gap-2">
+                 <div className="flex flex-row  items-center gap-4 ">
+                    <Typography
+                      variant="small"
+                      color="blue-gray"
+                      className=" pt-3 font-medium text-indigo-50 text-xl"
+                      style={{width: "100px"}}
+                    >
+                        Age    
+                  </Typography>
+                  <input id="age"
+                    className="text-right text-indigo-50 bg-indigo-800 border w-full py-2 px-3  mt-2 rounded-md flex-1" />
+                </div>
                  <div className="flex flex-row  items-center gap-4 ">
                     <Typography
                         variant="small"
@@ -120,7 +142,11 @@ function DailyCalorie() {
                     >
                         Gender   
                    </Typography>
+
                    <select className="text-right text-indigo-50 bg-maincolor border w-full py-2 px-3  mt-2 rounded-md flex-1">
+
+                   <select id="gender" className="text-right text-indigo-50 bg-indigo-800 border w-full py-2 px-3  mt-2 rounded-md flex-1">
+
                       <option style={{display:"none"}}></option>
                       <option>Male</option>
                       <option>Female</option>
@@ -135,9 +161,14 @@ function DailyCalorie() {
                     >
                         Weight    
                    </Typography>
+
                    <input
                     placeholder="kg"
                      className="text-right text-indigo-50 bg-maincolor border w-full py-2 px-3  mt-2 rounded-md flex-1" />
+
+                   <input id="weight"
+                     className="text-right text-indigo-50 bg-indigo-800 border w-full py-2 px-3  mt-2 rounded-md flex-1" />
+
                   </div>
                   <div className="flex flex-row items-center gap-4">
                    <Typography
@@ -148,9 +179,14 @@ function DailyCalorie() {
                     >
                         Height
                     </Typography>
+
                     <input 
                     placeholder="cm"
                        className="text-right text-indigo-50 bg-maincolor border w-full py-2 px-3 form-input mt-2 rounded-md flex-1" />
+
+                    <input id="height"
+                       className="text-right text-indigo-50 bg-indigo-800 border w-full py-2 px-3 form-input mt-2 rounded-md flex-1" />
+
                   </div>
                   <div className="flex flex-row items-center gap-4 shrink">
                     <Typography
@@ -161,19 +197,27 @@ function DailyCalorie() {
                     >
                         Activity level
                     </Typography>
+
                     <select className="text-right text-indigo-50 bg-maincolor border w-full py-2 px-3  mt-2 rounded-md flex-1">
+
+                    <select id="actLevel" className="text-right text-indigo-50 bg-indigo-800 border w-full py-2 px-3  mt-2 rounded-md flex-1">
+
                       <option style={{display:"none"}}></option>
-                      <option>Level 1</option>
-                      <option>Level 2</option>
-                      <option>Level 3</option>
-                      <option>Level 4</option>
-                      <option>Level 5</option>
-                      <option>Level 6</option>
+                      <option>level_1</option>
+                      <option>level_2</option>
+                      <option>level_3</option>
+                      <option>level_4</option>
+                      <option>level_5</option>
+                      <option>level_6</option>
                    </select>
                   </div>
                  </CardBody>
                  <CardFooter className="pt-0">
+
                   <Button fullWidth className="text-maincolor bg-indigo-50" /*onClick={}*/>
+
+                  <Button fullWidth className="text-indigo-800 bg-indigo-50" onClick={CalculateCalorie}>
+
                     Calculate Daily Calories
                   </Button>
                  </CardFooter>

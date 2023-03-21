@@ -2,7 +2,8 @@ import React from "react";
 import { MDBContainer, MDBNavbar, MDBNavbarBrand } from "mdb-react-ui-kit";
 import { NavLink } from "react-router-dom";
 import fitmax2 from '../../assets/images/fItmax2.svg'
-// import { color, style } from "@mui/system";
+import { color, style } from "@mui/system";
+import "./header.css"
 
 
 export default function Header() {
@@ -25,9 +26,9 @@ export default function Header() {
             <li className="nav-item">
               <NavLink
                 to="/"
-                end
+                endgit 
                 className={({ isActive }) =>
-                  isActive ? "nav-link active" : "nav-link"
+                  isActive ? "nav-link active customActive" : "nav-link customNonActive"
                 }
               >
                 Home
@@ -38,7 +39,7 @@ export default function Header() {
                 to="Fitness"
                 style={{color: "white"}}
                 className={({ isActive }) =>
-                  isActive ? "nav-link active" : "nav-link"
+                  isActive ? "nav-link active customActive" : "nav-link customNonActive"
                 }
               >
                 Fitness
@@ -49,7 +50,7 @@ export default function Header() {
                 to="Workouts"
                 style={{color: "white"}}
                 className={({ isActive }) =>
-                  isActive ? "nav-link active" : "nav-link"
+                  isActive ? "nav-link active customActive" : "nav-link customNonActive"
                 }
               >
                 Workouts

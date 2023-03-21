@@ -1,0 +1,19 @@
+.customActive{
+    color: white !important;
+    border-color: #93DEFF !important;
+    border-width: 1rem;
+    background-color: transparent !important;
+  }
+
+
+  .customNonActive{
+    color: white !important;
+    border-color: transparent !important;
+    background-color: transparent !important;
+  }
+
+  .customNonActive:hover{
+    color: white !important;
+    border-color: transparent !important;
+    background-color: rgba(255, 255, 255, 0.251) !important;
+  }

@@ -51,14 +51,20 @@ function BMI(props) {
         });
       })
       .catch(function (error) {
-        alert("Please check your inputs!")
+        alert("Please check your inputs!");
       });
     }
   }, [bodyData, bodyData.age, bodyData.height, bodyData.weight]);
 
   useEffect(() => {
     if(bmiData){
-      localStorage.setItem("bmiData", JSON.stringify(bmiData));
+      const report = JSON.parse(localStorage.getItem("report"));
+        localStorage.setItem("report",JSON.stringify({
+          bmi:bmiData.bmi,
+          health: bmiData.health,
+          fat: report ? report.fat : "",
+          calorie: report ? report.calorie : ""
+      }));
       props.getLocal();
     }
   }, [bmiData]);
