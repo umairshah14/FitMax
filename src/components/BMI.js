@@ -100,10 +100,10 @@ function BMI(props) {
         <div className=" flex mx-auto px-2 mt-28 mb-15">
          <div className="flex max-w-md mx-auto md:max-w-xl">
            <div className="md:flex">   
-            <Card className=" bg-indigo-800 mt-12 ml-8 p-1 mr-6">
+            <Card className=" bg-maincolor mt-12 ml-8 p-1 mr-6 border-secondcolor border-2">
              <CardHeader
               variant="gradient"
-              className="grid h-8 text-xl font-bold place-items-center border-2 border-indigo-800  bg-indigo-50 text-indigo-800"
+              className="grid h-8 text-xl font-bold place-items-center border-2 border-secondcolor  bg-indigo-50 text-indigo-800"
               >
               {" "}
               BMI
@@ -119,7 +119,7 @@ function BMI(props) {
                     Age    
                </Typography>
                <input id="age"
-                 className="text-right text-indigo-50 bg-indigo-800 border w-full py-2 px-3  mt-2 rounded-md flex-1" />
+                 className="text-right text-indigo-50 bg-maincolor border w-full py-2 px-3  mt-2 rounded-md flex-1" />
               </div>
               <div className="flex flex-row items-center gap-4">
                <Typography
@@ -133,7 +133,7 @@ function BMI(props) {
                 <input id="weight"
                    variant="outlined" label="Kg"
                    placeholder="Kg" 
-                   className="text-right text-indigo-50 bg-indigo-800 border w-full py-2 px-3 form-input mt-2 rounded-md flex-1" />
+                   className="text-right text-indigo-50 bg-maincolor border w-full py-2 px-3 form-input mt-2 rounded-md flex-1" />
               </div>
               <div className="flex flex-row items-center gap-4 shrink">
                 <Typography
@@ -146,7 +146,7 @@ function BMI(props) {
                 </Typography>
                 <input id="height"
                     placeholder="cm" 
-                   className="text-right text-indigo-50 bg-indigo-800 border w-full py-2 px-3 form-input mt-2 rounded-md flex-1" />
+                   className="text-right text-indigo-50 bg-maincolor border w-full py-2 px-3 form-input mt-2 rounded-md flex-1" />
               </div>
              </CardBody>
              <CardFooter className="pt-0">
