@@ -50,7 +50,8 @@ function DailyCalorie(props) {
               bmi:report ? report.bmi : "",
               health: report ? report.health : "",
               fat: report ? report.fat : "",
-              calorie: calorieData.calorie
+              calorie: calorieData.calorie,
+              ideal: report ? report.ideal : ""
           }));
           props.getLocal();
         }

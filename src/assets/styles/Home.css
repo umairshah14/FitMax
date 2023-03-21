@@ -12,57 +12,32 @@ main
     background-color: var(--backgroundColor);
 }
 
-footer
-{
-    border-top: 1px solid white;
-    color:var(--textColor);
-    display: flex;
-    align-items: space-evenly;
-    justify-content: flex-start;
-}
+/* container parent for the carousel */
 .carouselParent
 {
-    height: 700px;
-    margin-bottom: 10%;
+    margin-bottom: 5%;
 }
 
+/* images in the carousel */
 .imgSlider
 {
-    height: 700px;
+    height: 70vh ;
+    object-fit: cover;
     width: 100%;
 }
 
-.bmiInfo, .calorieInfo, .bodyFatInfo
+/* setting background to caption in carousel to make caption visible */
+.imgCaption
 {
-    margin-bottom: 10%;
-
-    /* padding: 5%; */
+    background-color: var(--backgroundColor);
+    opacity: 0.9;
+    color: var(--metricsCard);
+    border-radius: 10px;
 }
 
-.metricsCardContainer
-{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    margin-bottom: 10%;
-}
 
-.metricsCard
-{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    background-color: var(--metricsCard);
-    color: var(--backgroundColor);
-    width: 20rem;
-    height: 25vh;
-    text-align: center;
-    border: 2px solid var(--backgroundColor);
-    border-radius: 5px;
-    cursor: pointer;
-    
-}
 
+/* Fitness metric row and text */
 .fitnessMetricsHeader
 {
     display: flex;
@@ -72,35 +47,37 @@ footer
     margin-bottom: 2%;
 }
 
-.metricInfoHeaderContainer
+/* row of each card metric */
+.metricsRow
 {
-    width: fit-content;
+    margin-bottom: 5%;
 }
 
-.metricInfoHeader
+/* heading  of each metric card */
+.metricsCard
 {
     
-    color: var(--textColor);
-    width: 15%;
-    margin-left: 5%;
-    border-radius: 5px;
-    border: 1.5px solid var(--backgroundColor);
-    text-align: center;
-    border: 2px solid var(--metricsCard);
-}
-
-.bmiInfoDescription, .caloriesInfoDescription, .bodyFatInfoDescription
-{
-    display: flex;
-    color: var(--secondaryTextColor);
     background-color: var(--metricsCard);
-    height: max-content;
-    width: fit-content;
-    flex-wrap: wrap;
-
-}   
-
-.desc
-{
-    margin-left: 5%;
+    color: var(--backgroundColor);
+    text-align: center;
+    border: 2px solid var(--backgroundColor);
+    border-radius: 5px;
+    text-align: center;
+    width: 20rem;
+    height: 40vh;
+    
 }
+
+
+/* description of each metric card */
+.metricsCardDescription
+{
+    background-color: var(--backgroundColor);
+    color: var(--textColor);
+    /* border: 2px solid var(--textColor); */
+    margin-left: -5%;
+}
+
+
+
+

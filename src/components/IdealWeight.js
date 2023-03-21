@@ -10,9 +10,9 @@ import {
 } from "@material-tailwind/react";
 import {Container, Row, Col} from "react-bootstrap"
 
-function IdealWeight() {
+function IdealWeight(props) {
 
-  const [ideal, setIdeal] = useState();
+  const [idealData, setIdeal] = useState();
 
   const [bodyData, setBodyData] = useState({});
 
@@ -37,23 +37,36 @@ function IdealWeight() {
         setIdeal(response.data.data["Hamwi"]);
       })
       .catch(function (error) {
-        console.error(error);
+        alert("Please check your inputs!");
       });
 
     }
 
   }, [bodyData, bodyData.gender, bodyData.height]);
 
+  useEffect(() => {
+    if(idealData){
+      const report = JSON.parse(localStorage.getItem("report"));
+        localStorage.setItem("report",JSON.stringify({
+          bmi:report ? report.bmi : "",
+          health: report ? report.health : "",
+          fat: report ? report.fat : "",
+          calorie: report ? report.calorie : "",
+          ideal: idealData
+      }));
+      props.getLocal();
+    }
+  }, [idealData]);
+
   const CalculateIdeal = () => {
     setBodyData({
-        gender: document.getElementById("gender").value,
+        gender: document.getElementById("gender").value.toLowerCase(),
         height: document.getElementById("height").value,
     });
   }
 
   return (
     <div>
-      {ideal}
       <Container>
        <Row>
         <Col lg={6} sm={12}>
@@ -88,24 +101,11 @@ function IdealWeight() {
                 >
                     Gender    
                </Typography>
-               <select className="text-right text-indigo-50 bg-maincolor border w-full py-2 px-3  mt-2 rounded-md flex-1">
+               <select id="gender" className="text-right text-indigo-50 bg-maincolor border w-full py-2 px-3  mt-2 rounded-md flex-1">
                       <option style={{display:"none"}}></option>
                       <option>Male</option>
                       <option>Female</option>
                    </select>
-              </div>
-              <div className="flex flex-row items-center gap-4">
-               <Typography
-                    variant="small"
-                    color="blue-gray"
-                    className=" pt-3 font-medium text-indigo-50 text-xl"
-                    style={{width: "100px"}}
-                >
-                    Age
-                </Typography>
-                <input id="weight"
-                   variant="outlined" 
-                   className="text-right text-indigo-50 bg-maincolor border w-full py-2 px-3 form-input mt-2 rounded-md flex-1" />
               </div>
               <div className="flex flex-row items-center gap-4 shrink">
                 <Typography

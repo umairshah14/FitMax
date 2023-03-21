@@ -13,7 +13,7 @@ import {Container, Row, Col,} from "react-bootstrap"
 import BodyFatTable from "./Table";
 
 function BodyFat(props) {
-    const [bodyFatData, setBodyFatData] = useState({});
+    const [bodyFatData, setBodyFatData] = useState();
 
     const [bodyData, setBodyData] = useState({});
 
@@ -55,7 +55,8 @@ function BodyFat(props) {
                 bmi:report ? report.bmi : "",
                 health: report ? report.health : "",
                 fat: bodyFatData.fat,
-                calorie: report ? report.calorie : ""
+                calorie: report ? report.calorie : "",
+                ideal: report ? report.ideal : ""
           }));
           props.getLocal();
         }
