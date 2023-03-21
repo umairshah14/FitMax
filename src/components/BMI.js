@@ -104,7 +104,7 @@ function BMI(props) {
       </Col>
       
       <Col lg={6} sm={12}>
-        <div className=" flex mx-auto px-2  mb-15">
+        <div className=" flex mx-auto px-2 mb-15">
          <div className="flex max-w-md mx-auto md:max-w-xl">
            <div className="md:flex">   
             <Card className=" bg-maincolor mt-12 ml-8 p-1 mr-6 border-secondcolor border-2">
