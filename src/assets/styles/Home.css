@@ -15,7 +15,7 @@ main
 /* container parent for the carousel */
 .carouselParent
 {
-    margin-bottom: 5%;
+    margin-bottom: 3%;
 }
 
 /* images in the carousel */
@@ -50,14 +50,14 @@ main
 /* row of each card metric */
 .metricsRow
 {
-    margin-bottom: 5%;
+    margin-bottom: 3%;
 }
 
 /* heading  of each metric card */
 .metricsCard
 {
     
-    background-color: var(--metricsCard);
+    background-color: #142738 !important;
     color: var(--backgroundColor);
     text-align: center;
     border: 2px solid var(--backgroundColor);
@@ -65,6 +65,7 @@ main
     text-align: center;
     width: 20rem;
     height: 40vh;
+    box-shadow: none !important;
     
 }
 
@@ -74,7 +75,7 @@ main
 {
     background-color: var(--backgroundColor);
     color: var(--textColor);
-    /* border: 2px solid var(--textColor); */
+    border-left: 2px solid var(--textColor);
     margin-left: -5%;
 }
 
