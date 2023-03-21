@@ -82,7 +82,7 @@ function BMI(props) {
     <Container>
      <Row>
       <Col lg={6} sm={12}>
-      <div className="flex flex-col justify-center items-center mt-10 gap-4">
+      <div className="flex flex-col justify-center items-center  gap-4">
            <div className="box-border h-32 w-64 p-4 border-4 border-pink-200 rounded-md bg-pink-300 ">
             <p className="text-2xl font-bold text-center">Underweight</p>
             <p className="text-center font-semibold">Below 18.5</p>
@@ -103,7 +103,7 @@ function BMI(props) {
       </Col>
       
       <Col lg={6} sm={12}>
-        <div className=" flex mx-auto px-2 mt-28 mb-15">
+        <div className=" flex mx-auto px-2  mb-15">
          <div className="flex max-w-md mx-auto md:max-w-xl">
            <div className="md:flex">   
             <Card className=" bg-maincolor mt-12 ml-8 p-1 mr-6 border-secondcolor border-2">
@@ -111,7 +111,7 @@ function BMI(props) {
               variant="gradient"
               className="grid h-8 text-xl font-bold place-items-center border-2 border-secondcolor  bg-indigo-50 text-maincolor"
               >
-              {" "}
+              
               BMI
              </CardHeader>
              <CardBody className="flex flex-col gap-2">
@@ -157,7 +157,7 @@ function BMI(props) {
              </CardBody>
              <CardFooter className="pt-0">
               <Button fullWidth className="text-maincolor bg-indigo-50" onClick={CalculateBMI}>
-                Calculate my BMI
+                Calculate
               </Button>
              </CardFooter>
            </Card>
