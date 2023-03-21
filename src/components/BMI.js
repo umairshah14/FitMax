@@ -103,7 +103,7 @@ function BMI(props) {
             <Card className=" bg-maincolor mt-12 ml-8 p-1 mr-6 border-secondcolor border-2">
              <CardHeader
               variant="gradient"
-              className="grid h-8 text-xl font-bold place-items-center border-2 border-secondcolor  bg-indigo-50 text-indigo-800"
+              className="grid h-8 text-xl font-bold place-items-center border-2 border-secondcolor  bg-indigo-50 text-maincolor"
               >
               {" "}
               BMI
@@ -150,7 +150,7 @@ function BMI(props) {
               </div>
              </CardBody>
              <CardFooter className="pt-0">
-              <Button fullWidth className="text-indigo-800 bg-indigo-50" onClick={CalculateBMI}>
+              <Button fullWidth className="text-maincolor bg-indigo-50" onClick={CalculateBMI}>
                 Calculate my BMI
               </Button>
              </CardFooter>
