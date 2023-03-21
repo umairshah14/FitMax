@@ -106,11 +106,6 @@ function Home() {
                 </Row>
                 </Container>
             </section>
-
-
-
-
-                </section>
         
           </main>  
         </>
