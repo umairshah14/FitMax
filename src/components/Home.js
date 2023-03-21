@@ -36,7 +36,7 @@ function Home() {
 
                         <Col className="FatCardinHome" lg={4} sm={12}>
                             <Card>
-                            <Card.Body className="metricsCard"y>
+                            <Card.Body className="metricsCard">
                                     <h2>Calories</h2>
                                 </Card.Body>    
                             </Card>

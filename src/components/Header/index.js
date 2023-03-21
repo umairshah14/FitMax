@@ -26,7 +26,6 @@ export default function Header() {
             <li className="nav-item">
               <NavLink
                 to="/"
-                endgit 
                 className={({ isActive }) =>
                   isActive ? "nav-link active customActive" : "nav-link customNonActive"
                 }
