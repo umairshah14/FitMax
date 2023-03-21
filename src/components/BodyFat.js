@@ -13,7 +13,7 @@ import {Container, Row, Col,} from "react-bootstrap"
 import BodyFatTable from "./Table";
 
 function BodyFat(props) {
-    const [bodyFatData, setBodyFatData] = useState({});
+    const [bodyFatData, setBodyFatData] = useState();
 
     const [bodyData, setBodyData] = useState({});
 
