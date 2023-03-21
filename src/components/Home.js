@@ -61,7 +61,7 @@ function Home() {
                         </Col>
 
                         <Col className="metricsCardDescription" lg={8} sm={12}>
-                            <div className="CaloriesDescription h5Text">
+                            <div className="CaloriesDescription">
                                <h5 className="h5Text">
                                     The amount of energy in an item of food or drink is measured in calories.
                                     When we eat and drink more calories than we use up, our bodies store the excess as body fat. If this continues, over time we may put on weight.

@@ -76,10 +76,11 @@ header {
 }
 
 .h5Text{
-  margin-top: 0;
+    margin-top: 0;
     margin-bottom: 0.5rem;
     font-weight: 300;
     line-height: 1.1;
+    margin-left: 1.2% !important;
 
 }
 
@@ -93,8 +94,7 @@ header {
 
 .card-body2 {
   background-color: #142738;
-  border: solid 1px #93DEFF;
+  /* border-right: solid 1px #93DEFF; */
   color: white !important;
-  border-radius: 1rem;
   
 }

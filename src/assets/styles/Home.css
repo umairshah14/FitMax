@@ -15,7 +15,7 @@ main
 /* container parent for the carousel */
 .carouselParent
 {
-    margin-bottom: 5%;
+    margin-bottom: 3%;
 }
 
 /* images in the carousel */
@@ -65,6 +65,9 @@ main
     text-align: center;
     width: 20rem;
     height: 40vh;
+    box-shadow: none !important;
+    align-self: flex-start;
+    display: flex;
     
 }
 
@@ -74,7 +77,7 @@ main
 {
     background-color: var(--backgroundColor);
     color: var(--textColor);
-    /* border: 2px solid var(--textColor); */
+    border-left: 2px solid var(--textColor);
     margin-left: -5%;
 }
 
