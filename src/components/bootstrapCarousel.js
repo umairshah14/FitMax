@@ -1,7 +1,8 @@
 import Carousel from 'react-bootstrap/Carousel';
-import old_people from '../assets/images/old_people.jpeg';
+import tennis from '../assets/images/tennis.jpg';
 import running from '../assets/images/running_img.jpg';
 import running_2 from '../assets/images/running_2.jpg';
+import body_positivity from '../assets/images/body-positivity.jpg';
 
 function UncontrolledExample() {
   return (
@@ -14,25 +15,37 @@ function UncontrolledExample() {
             src={running}
             alt="running before sunrise"
           />
-          <Carousel.Caption> {/* carousel container for the 1st image's caption  */}
-            <h3> 5 Scientific Reasons to run before 7 AM</h3>
-            <p> Learn More </p>
+          <Carousel.Caption className='imgCaption'> {/* carousel container for the 1st image's caption  */}
+            <h3> Benefits of a morning run</h3>
+            <p> <a href= "https://www.shape.com/fitness/cardio/5-reasons-mornings-are-best-time-run" target={"_blank"}> Learn More </a>  </p>
           </Carousel.Caption>
         </Carousel.Item>
 
         <Carousel.Item> {/* carousel container for the 2nd image  */}
           <img
             className="imgSlider"
-            src= {old_people}
+            src= {tennis}
             alt="old people exercising"
           />
 
-          <Carousel.Caption> {/* carousel container for the 2nd image's caption */}
+          <Carousel.Caption className='imgCaption'> {/* carousel container for the 2nd image's caption */}
             <h3>Why staying active after 50 reduces health risk  </h3>
-            <p> Learn more </p>
+            <p> <a href = "https://www.fitandwell.com/features/benefits-of-exercise-over-50" target={"_blank"}> Learn more </a> </p>
           </Carousel.Caption>
         </Carousel.Item>
 
+        <Carousel.Item> {/* carousel container for the 2nd image  */}
+          <img
+            className="imgSlider"
+            src= {body_positivity}
+            alt="body positivity"
+          />
+
+          <Carousel.Caption className='imgCaption'> {/* carousel container for the 2nd image's caption */}
+            <h3> It's never too late to start exercising.   </h3>
+            <p> <a href="https://www.nhs.uk/live-well/exercise/exercise-health-benefits/" target={"_blank"}> Learn more </a> </p>
+          </Carousel.Caption>
+        </Carousel.Item>
         
         <Carousel.Item> {/* carousel container for the 3rd image  */}
           <img
@@ -41,7 +54,7 @@ function UncontrolledExample() {
             alt="home_workouts"
           />
 
-          <Carousel.Caption> {/* carousel container for the 3rd image's caption  */}
+          <Carousel.Caption className='imgCaption'> {/* carousel container for the 3rd image's caption  */}
             <h3> Struggling to being consistent with exercises ? 
               3 Tips that will make you be consistent </h3>
             <p>
