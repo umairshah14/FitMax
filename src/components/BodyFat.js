@@ -55,7 +55,8 @@ function BodyFat(props) {
                 bmi:report ? report.bmi : "",
                 health: report ? report.health : "",
                 fat: bodyFatData.fat,
-                calorie: report ? report.calorie : ""
+                calorie: report ? report.calorie : "",
+                ideal: report ? report.ideal : ""
           }));
           props.getLocal();
         }
