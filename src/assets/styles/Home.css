@@ -7,6 +7,19 @@
     --secondaryTextColor: #142738; 
 }
 
+main
+{
+    background-color: var(--backgroundColor);
+}
+
+footer
+{
+    border-top: 1px solid white;
+    color:var(--textColor);
+    display: flex;
+    align-items: space-evenly;
+    justify-content: flex-start;
+}
 .carouselParent
 {
     height: 700px;
@@ -22,7 +35,8 @@
 .bmiInfo, .calorieInfo, .bodyFatInfo
 {
     margin-bottom: 10%;
-    padding: 5%;
+
+    /* padding: 5%; */
 }
 
 .metricsCardContainer
@@ -30,47 +44,63 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
+    margin-bottom: 10%;
 }
 
 .metricsCard
 {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    align-items: center;
     background-color: var(--metricsCard);
-    color: var(--secondaryTextColor);
-    width: 15rem;
-    height: 20vh;
+    color: var(--backgroundColor);
+    width: 20rem;
+    height: 25vh;
     text-align: center;
-    border: 5px solid var(--backgroundColor);
+    border: 2px solid var(--backgroundColor);
+    border-radius: 5px;
+    cursor: pointer;
+    
 }
 
-
+.fitnessMetricsHeader
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--textColor);
+    margin-bottom: 2%;
+}
 
 .metricInfoHeaderContainer
 {
-    margin-left: 10%;
+    width: fit-content;
 }
 
 .metricInfoHeader
 {
-    background-color: var(--metricsCard);
-    color: var(--secondaryTextColor);
+    
+    color: var(--textColor);
     width: 15%;
-    border-radius: 10px;
+    margin-left: 5%;
+    border-radius: 5px;
     border: 1.5px solid var(--backgroundColor);
     text-align: center;
+    border: 2px solid var(--metricsCard);
 }
 
 .bmiInfoDescription, .caloriesInfoDescription, .bodyFatInfoDescription
 {
     display: flex;
-    color: var(--textColor);
-    background-color: var(--backgroundColor);
-    margin-left: 10%;
-    height: fit-content;
-    width: 70%;
-    margin-top: 2%;
-    margin-bottom: 2%;
+    color: var(--secondaryTextColor);
+    background-color: var(--metricsCard);
+    height: max-content;
+    width: fit-content;
     flex-wrap: wrap;
-    text-align: justify;
+
+}   
+
+.desc
+{
+    margin-left: 5%;
 }
