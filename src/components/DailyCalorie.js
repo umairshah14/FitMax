@@ -136,6 +136,7 @@ function DailyCalorie() {
                         Weight    
                    </Typography>
                    <input
+                    placeholder="kg"
                      className="text-right text-indigo-50 bg-maincolor border w-full py-2 px-3  mt-2 rounded-md flex-1" />
                   </div>
                   <div className="flex flex-row items-center gap-4">
@@ -148,6 +149,7 @@ function DailyCalorie() {
                         Height
                     </Typography>
                     <input 
+                    placeholder="cm"
                        className="text-right text-indigo-50 bg-maincolor border w-full py-2 px-3 form-input mt-2 rounded-md flex-1" />
                   </div>
                   <div className="flex flex-row items-center gap-4 shrink">
