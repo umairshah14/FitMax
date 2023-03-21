@@ -142,9 +142,6 @@ function DailyCalorie(props) {
                     >
                         Gender   
                    </Typography>
-
-                   <select className="text-right text-indigo-50 bg-maincolor border w-full py-2 px-3  mt-2 rounded-md flex-1">
-
                    <select id="gender" className="text-right text-indigo-50 bg-indigo-800 border w-full py-2 px-3  mt-2 rounded-md flex-1">
 
                       <option style={{display:"none"}}></option>
@@ -198,8 +195,6 @@ function DailyCalorie(props) {
                         Activity level
                     </Typography>
 
-                    <select className="text-right text-indigo-50 bg-maincolor border w-full py-2 px-3  mt-2 rounded-md flex-1">
-
                     <select id="actLevel" className="text-right text-indigo-50 bg-indigo-800 border w-full py-2 px-3  mt-2 rounded-md flex-1">
 
                       <option style={{display:"none"}}></option>
@@ -214,10 +209,7 @@ function DailyCalorie(props) {
                  </CardBody>
                  <CardFooter className="pt-0">
 
-                  <Button fullWidth className="text-maincolor bg-indigo-50" /*onClick={}*/>
-
-                  <Button fullWidth className="text-indigo-800 bg-indigo-50" onClick={CalculateCalorie}>
-
+                  <Button fullWidth className="text-indigo-800 bg-indigo-50" onClick={CalculateCalorie} >
                     Calculate Daily Calories
                   </Button>
                  </CardFooter>

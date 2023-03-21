@@ -73,7 +73,8 @@ function BodyFat(props) {
         });
       }
 
-      return ( <div>
+      return ( 
+      <div>
 
         <Container >
          <Row>
@@ -93,7 +94,6 @@ function BodyFat(props) {
                   variant="gradient"
                   className="grid h-8 text-xl font-bold place-items-center border-2 border-secondcolor  bg-indigo-50 text-maincolor"
                   >
-                  
                   Body Fat
                  </CardHeader>
                  <CardBody className="flex flex-col gap-2">
@@ -118,9 +118,6 @@ function BodyFat(props) {
                     >
                         Gender   
                    </Typography>
-
-                   <select className="text-right text-indigo-50 bg-maincolor border w-full py-2 px-3  mt-2 rounded-md flex-1">
-
                    <select id="gender" className="text-right text-indigo-50 bg-indigo-800 border w-full py-2 px-3  mt-2 rounded-md flex-1">
 
                       <option style={{display:"none"}}></option>
@@ -137,12 +134,8 @@ function BodyFat(props) {
                     >
                         Weight    
                    </Typography>
-
-                   <input
-                     placeholder="kg"
-                     className="text-right text-indigo-50 bg-maincolor border w-full py-2 px-3  mt-2 rounded-md flex-1" />
-
                    <input id="weight"
+                   placeholder="kg"
                      className="text-right text-indigo-50 bg-indigo-800 border w-full py-2 px-3  mt-2 rounded-md flex-1" />
 
                   </div>
@@ -156,13 +149,7 @@ function BodyFat(props) {
                         Height
                     </Typography>
 
-                    <input 
-                       placeholder="kg"
-                       className="text-right text-indigo-50 bg-maincolor border w-full py-2 px-3 form-input mt-2 rounded-md flex-1" />
-
-                    <input id="height"
-                       className="text-right text-indigo-50 bg-indigo-800 border w-full py-2 px-3 form-input mt-2 rounded-md flex-1" />
-
+                    <input id="height" placeholder="kg" className="text-right text-indigo-50 bg-indigo-800 border w-full py-2 px-3 form-input mt-2 rounded-md flex-1" />
                   </div>
                   <div className="flex flex-row items-center gap-4 shrink">
                     <Typography
@@ -174,11 +161,7 @@ function BodyFat(props) {
                         Waist
                     </Typography>
 
-                    <input
-                       placeholder="kg"
-                       className="text-right text-indigo-50 bg-maincolor border w-full py-2 px-3 form-input mt-2 rounded-md flex-1" />
-
-                    <input id="waist"
+                    <input id="waist" placeholder="cm"
                        className="text-right text-indigo-50 bg-indigo-800 border w-full py-2 px-3 form-input mt-2 rounded-md flex-1" />
 
                   </div>
@@ -192,11 +175,7 @@ function BodyFat(props) {
                         Neck
                     </Typography>
 
-                    <input
-                       placeholder="kg"
-                       className="text-right text-indigo-50 bg-maincolor border w-full py-2 px-3 form-input mt-2 rounded-md flex-1" />
-
-                    <input id="neck"
+                    <input id="neck" placeholder="cm"
                        className="text-right text-indigo-50 bg-indigo-800 border w-full py-2 px-3 form-input mt-2 rounded-md flex-1" />
 
                   </div>
@@ -211,15 +190,8 @@ function BodyFat(props) {
                     </Typography>
 
                     <input
-                       placeholder="kg"
+                       placeholder="cm" id="hip"
                        className="text-right text-indigo-50 bg-maincolor border w-full py-2 px-3 form-input mt-2 rounded-md flex-1" />
-                  </div>
-                 </CardBody>
-                 <CardFooter className="pt-0">
-                  <Button fullWidth className="text-maincolor bg-indigo-50" /*onClick={}*/>
-
-                    <input id="hip"
-                       className="text-right text-indigo-50 bg-indigo-800 border w-full py-2 px-3 form-input mt-2 rounded-md flex-1" />
                   </div>
                  </CardBody>
                  <CardFooter className="pt-0">
