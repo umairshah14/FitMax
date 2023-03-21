@@ -22,13 +22,13 @@ footer
 }
 .carouselParent
 {
-    height: 700px;
-    margin-bottom: 10%;
+    margin-bottom: 5%;
 }
 
 .imgSlider
 {
-    height: 700px;
+    height: 70vh ;
+    object-fit: cover;
     width: 100%;
 }
 
@@ -100,6 +100,13 @@ footer
 
 }   
 
+.imgCaption
+{
+    background-color: var(--backgroundColor);
+    opacity: 0.9;
+    color: var(--metricsCard);
+    border-radius: 10px;
+}
 .desc
 {
     margin-left: 5%;
