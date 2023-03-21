@@ -63,7 +63,7 @@ function BodyFat() {
       }, [personData.age, personData.gender, personData.height, personData.weight, personData.neck, personData.waist, personData.hip]);
 
       return ( <div>
-        {bodyFatData.Category}
+        
         <Container >
          <Row>
           <Col lg={6} sm={12}>
@@ -77,10 +77,10 @@ function BodyFat() {
             <div className=" flex mx-auto px-2 mt-8 mb-15">
              <div className="flex max-w-md mx-auto md:max-w-xl">
                <div className="md:flex">   
-                <Card className=" bg-indigo-800  ml-8 p-1 mr-6">
+                <Card className=" bg-maincolor border-2 border-secondcolor  ml-8 p-1 mr-6">
                  <CardHeader
                   variant="gradient"
-                  className="grid h-8 text-xl font-bold place-items-center border-2 border-indigo-800  bg-indigo-50 text-indigo-800"
+                  className="grid h-8 text-xl font-bold place-items-center border-2 border-secondcolor  bg-indigo-50 text-maincolor"
                   >
                   {" "}
                   Body Fat
@@ -95,7 +95,7 @@ function BodyFat() {
                     >
                         Gender   
                    </Typography>
-                   <select className="text-right text-indigo-50 bg-indigo-800 border w-full py-2 px-3  mt-2 rounded-md flex-1">
+                   <select className="text-right text-indigo-50 bg-maincolor border w-full py-2 px-3  mt-2 rounded-md flex-1">
                       <option style={{display:"none"}}></option>
                       <option>Male</option>
                       <option>Female</option>
@@ -111,7 +111,8 @@ function BodyFat() {
                         Weight    
                    </Typography>
                    <input
-                     className="text-right text-indigo-50 bg-indigo-800 border w-full py-2 px-3  mt-2 rounded-md flex-1" />
+                     placeholder="kg"
+                     className="text-right text-indigo-50 bg-maincolor border w-full py-2 px-3  mt-2 rounded-md flex-1" />
                   </div>
                   <div className="flex flex-row items-center gap-4">
                    <Typography
@@ -123,7 +124,8 @@ function BodyFat() {
                         Height
                     </Typography>
                     <input 
-                       className="text-right text-indigo-50 bg-indigo-800 border w-full py-2 px-3 form-input mt-2 rounded-md flex-1" />
+                       placeholder="kg"
+                       className="text-right text-indigo-50 bg-maincolor border w-full py-2 px-3 form-input mt-2 rounded-md flex-1" />
                   </div>
                   <div className="flex flex-row items-center gap-4 shrink">
                     <Typography
@@ -135,7 +137,8 @@ function BodyFat() {
                         Waist
                     </Typography>
                     <input
-                       className="text-right text-indigo-50 bg-indigo-800 border w-full py-2 px-3 form-input mt-2 rounded-md flex-1" />
+                       placeholder="kg"
+                       className="text-right text-indigo-50 bg-maincolor border w-full py-2 px-3 form-input mt-2 rounded-md flex-1" />
                   </div>
                   <div className="flex flex-row items-center gap-4 shrink">
                     <Typography
@@ -147,7 +150,8 @@ function BodyFat() {
                         Neck
                     </Typography>
                     <input
-                       className="text-right text-indigo-50 bg-indigo-800 border w-full py-2 px-3 form-input mt-2 rounded-md flex-1" />
+                       placeholder="kg"
+                       className="text-right text-indigo-50 bg-maincolor border w-full py-2 px-3 form-input mt-2 rounded-md flex-1" />
                   </div>
                   <div className="flex flex-row items-center gap-4 shrink">
                     <Typography
@@ -159,11 +163,12 @@ function BodyFat() {
                         Hip
                     </Typography>
                     <input
-                       className="text-right text-indigo-50 bg-indigo-800 border w-full py-2 px-3 form-input mt-2 rounded-md flex-1" />
+                       placeholder="kg"
+                       className="text-right text-indigo-50 bg-maincolor border w-full py-2 px-3 form-input mt-2 rounded-md flex-1" />
                   </div>
                  </CardBody>
                  <CardFooter className="pt-0">
-                  <Button fullWidth className="text-indigo-800 bg-indigo-50" /*onClick={}*/>
+                  <Button fullWidth className="text-maincolor bg-indigo-50" /*onClick={}*/>
                     Calculate Body Fat
                   </Button>
                  </CardFooter>
