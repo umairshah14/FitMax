@@ -75,15 +75,15 @@ function DailyCalorie(props) {
            <Row>
             <Col lg={6} md={6} sm={6}>
              <div className="flex flex-col justify-center items-center mt-10 gap-4">
-               <div className="box-border h-36 w-auto p-3 border-4 border-indigo-800  bg-indigo-50 text-indigo-800 rounded-md  leading-4">
+               <div className="box-border h-36 w-auto p-3 border-4 border-secondcolor  bg-indigo-50 text-maincolor rounded-md  leading-4">
                 <p className="text-2xl font-bold text-center">Level 1</p>
                 <p className="text-center font-semibold">Sedentary little or no exercise</p>
                </div>
-               <div className="box-border h-36 w-auto p-3 border-4 border-indigo-800  bg-indigo-50 text-indigo-800 rounded-md  leading-4">
+               <div className="box-border h-36 w-auto p-3 border-4 border-secondcolor   bg-indigo-50 text-maincolor rounded-md  leading-4">
                 <p className="text-2xl font-bold text-center">Level 2</p>
                 <p className="text-center font-semibold">Exercise 1-3 times/week</p>
                </div>
-               <div className="box-border h-36 w-auto p-3 border-4 border-indigo-800  bg-indigo-50 text-indigo-800 rounded-md  leading-4">
+               <div className="box-border h-36 w-auto p-3 border-4 border-secondcolor   bg-indigo-50 text-maincolor rounded-md  leading-4">
                 <p className="text-2xl font-bold text-center">Level 3</p>
                 <p className="text-center font-semibold">Exercise 4-5 times/week</p>
                </div>
@@ -91,15 +91,15 @@ function DailyCalorie(props) {
             </Col>
             <Col lg={6} md={6} sm={6}>
              <div className="flex flex-col justify-center items-center mt-10 gap-4">
-               <div className="box-border h-36 w-auto p-3 border-4 border-indigo-800  bg-indigo-50 text-indigo-800 rounded-md leading-4">
+               <div className="box-border h-36 w-auto p-3 border-4 border-secondcolor   bg-indigo-50 text-maincolor rounded-md leading-4">
                 <p className="text-2xl font-bold text-center">Level 4</p>
                 <p className="text-center font-semibold">Daily exercise or intense exercie 3-4 times/week</p>
                </div>
-               <div className="box-border h-36 w-auto p-3 border-4 border-indigo-800  bg-indigo-50 text-indigo-800 rounded-md  leading-4">
+               <div className="box-border h-36 w-auto p-3 border-4 border-secondcolor   bg-indigo-50 text-maincolor rounded-md  leading-4">
                 <p className="text-2xl font-bold text-center">Level 5</p>
                 <p className="text-center font-semibold">Intense exercie 6-7 times/week</p>
                </div>
-               <div className="box-border h-36 w-auto p-3 border-4 border-indigo-800  bg-indigo-50 text-indigo-800 rounded-md leading-4">
+               <div className="box-border h-36 w-auto p-3 border-4 border-secondcolor  bg-indigo-50 text-maincolor rounded-md leading-4">
                 <p className="text-2xl font-bold text-center">Level 6</p>
                 <p className="text-center font-semibold">Very Intense exercie daily, or Physical job</p>
                </div>
@@ -112,12 +112,12 @@ function DailyCalorie(props) {
             <div className=" flex mx-auto px-2 mt-20 mb-15">
              <div className="flex max-w-md mx-auto md:max-w-xl">
                <div className="md:flex">   
-                <Card className=" bg-indigo-800 mt-12 ml-8 p-1 mr-6">
+                <Card className=" bg-maincolor border-2 border-secondcolor mt-12 ml-8 p-1 mr-6">
                  <CardHeader
                   variant="gradient"
-                  className="grid h-8 text-xl font-bold place-items-center border-2 border-indigo-800  bg-indigo-50 text-indigo-800"
+                  className="grid h-8 text-xl font-bold place-items-center border-2 border-secondcolor  bg-indigo-50 text-maincolor"
                   >
-                  {" "}
+                  
                   Daily Calories
                  </CardHeader>
                  <CardBody className="flex flex-col gap-2">
@@ -142,7 +142,11 @@ function DailyCalorie(props) {
                     >
                         Gender   
                    </Typography>
+
+                   <select className="text-right text-indigo-50 bg-maincolor border w-full py-2 px-3  mt-2 rounded-md flex-1">
+
                    <select id="gender" className="text-right text-indigo-50 bg-indigo-800 border w-full py-2 px-3  mt-2 rounded-md flex-1">
+
                       <option style={{display:"none"}}></option>
                       <option>Male</option>
                       <option>Female</option>
@@ -157,8 +161,14 @@ function DailyCalorie(props) {
                     >
                         Weight    
                    </Typography>
+
+                   <input
+                    placeholder="kg"
+                     className="text-right text-indigo-50 bg-maincolor border w-full py-2 px-3  mt-2 rounded-md flex-1" />
+
                    <input id="weight"
                      className="text-right text-indigo-50 bg-indigo-800 border w-full py-2 px-3  mt-2 rounded-md flex-1" />
+
                   </div>
                   <div className="flex flex-row items-center gap-4">
                    <Typography
@@ -169,8 +179,14 @@ function DailyCalorie(props) {
                     >
                         Height
                     </Typography>
+
+                    <input 
+                    placeholder="cm"
+                       className="text-right text-indigo-50 bg-maincolor border w-full py-2 px-3 form-input mt-2 rounded-md flex-1" />
+
                     <input id="height"
                        className="text-right text-indigo-50 bg-indigo-800 border w-full py-2 px-3 form-input mt-2 rounded-md flex-1" />
+
                   </div>
                   <div className="flex flex-row items-center gap-4 shrink">
                     <Typography
@@ -181,7 +197,11 @@ function DailyCalorie(props) {
                     >
                         Activity level
                     </Typography>
+
+                    <select className="text-right text-indigo-50 bg-maincolor border w-full py-2 px-3  mt-2 rounded-md flex-1">
+
                     <select id="actLevel" className="text-right text-indigo-50 bg-indigo-800 border w-full py-2 px-3  mt-2 rounded-md flex-1">
+
                       <option style={{display:"none"}}></option>
                       <option>level_1</option>
                       <option>level_2</option>
@@ -193,7 +213,11 @@ function DailyCalorie(props) {
                   </div>
                  </CardBody>
                  <CardFooter className="pt-0">
+
+                  <Button fullWidth className="text-maincolor bg-indigo-50" /*onClick={}*/>
+
                   <Button fullWidth className="text-indigo-800 bg-indigo-50" onClick={CalculateCalorie}>
+
                     Calculate Daily Calories
                   </Button>
                  </CardFooter>
