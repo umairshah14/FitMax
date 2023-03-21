@@ -60,7 +60,7 @@ function Fitness() {
 
     return (
         <div>
-         <Container className="exerciseTitle">
+         <Container className="exerciseTitle" style={{color:"white"}}>
         <h1>Fitness Calculators</h1>
         <h5>
           Click on one of the buttons below to find out what your ideal health levels should be

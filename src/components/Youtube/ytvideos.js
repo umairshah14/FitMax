@@ -59,13 +59,13 @@ const YTvideoss = () => {
 
   return (
     <div>
-      <Container className="exerciseTitle">
+      <Container className="exerciseTitle" style={{color:"white"}}>
         <h1>Workouts</h1>
         <h5>Click on one of the buttons below to find videos of exercises relating to your choice</h5>
       </Container>
 
       {/* ALL BUTTONS TO PICK DIFFERENT WORKOUTS */}
-      <Container id="workOutBtns">
+      <Container id="workOutBtns" >
         {buttons.map((button, index) => (
           <Button
             key={index}
