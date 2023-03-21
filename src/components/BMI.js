@@ -51,14 +51,21 @@ function BMI(props) {
         });
       })
       .catch(function (error) {
-        alert("Please check your inputs!")
+        alert("Please check your inputs!");
       });
     }
   }, [bodyData, bodyData.age, bodyData.height, bodyData.weight]);
 
   useEffect(() => {
     if(bmiData){
-      localStorage.setItem("bmiData", JSON.stringify(bmiData));
+      const report = JSON.parse(localStorage.getItem("report"));
+        localStorage.setItem("report",JSON.stringify({
+          bmi:bmiData.bmi,
+          health: bmiData.health,
+          fat: report ? report.fat : "",
+          calorie: report ? report.calorie : "",
+          ideal: report ? report.ideal : ""
+      }));
       props.getLocal();
     }
   }, [bmiData]);
@@ -76,7 +83,7 @@ function BMI(props) {
     <Container>
      <Row>
       <Col lg={6} sm={12}>
-      <div className="flex flex-col justify-center items-center mt-10 gap-4">
+      <div className="flex flex-col justify-center items-center  gap-4">
            <div className="box-border h-32 w-64 p-4 border-4 border-pink-200 rounded-md bg-pink-300 ">
             <p className="text-2xl font-bold text-center">Underweight</p>
             <p className="text-center font-semibold">Below 18.5</p>
@@ -97,15 +104,15 @@ function BMI(props) {
       </Col>
       
       <Col lg={6} sm={12}>
-        <div className=" flex mx-auto px-2 mt-28 mb-15">
+        <div className=" flex mx-auto px-2 mb-15">
          <div className="flex max-w-md mx-auto md:max-w-xl">
            <div className="md:flex">   
-            <Card className=" bg-indigo-800 mt-12 ml-8 p-1 mr-6">
+            <Card className=" bg-maincolor mt-12 ml-8 p-1 mr-6 border-secondcolor border-2">
              <CardHeader
               variant="gradient"
-              className="grid h-8 text-xl font-bold place-items-center border-2 border-indigo-800  bg-indigo-50 text-indigo-800"
+              className="grid h-8 text-xl font-bold place-items-center border-2 border-secondcolor  bg-indigo-50 text-maincolor"
               >
-              {" "}
+              
               BMI
              </CardHeader>
              <CardBody className="flex flex-col gap-2">
@@ -119,7 +126,7 @@ function BMI(props) {
                     Age    
                </Typography>
                <input id="age"
-                 className="text-right text-indigo-50 bg-indigo-800 border w-full py-2 px-3  mt-2 rounded-md flex-1" />
+                 className="text-right text-indigo-50 bg-maincolor border w-full py-2 px-3  mt-2 rounded-md flex-1" />
               </div>
               <div className="flex flex-row items-center gap-4">
                <Typography
@@ -133,7 +140,7 @@ function BMI(props) {
                 <input id="weight"
                    variant="outlined" label="Kg"
                    placeholder="Kg" 
-                   className="text-right text-indigo-50 bg-indigo-800 border w-full py-2 px-3 form-input mt-2 rounded-md flex-1" />
+                   className="text-right text-indigo-50 bg-maincolor border w-full py-2 px-3 form-input mt-2 rounded-md flex-1" />
               </div>
               <div className="flex flex-row items-center gap-4 shrink">
                 <Typography
@@ -146,12 +153,12 @@ function BMI(props) {
                 </Typography>
                 <input id="height"
                     placeholder="cm" 
-                   className="text-right text-indigo-50 bg-indigo-800 border w-full py-2 px-3 form-input mt-2 rounded-md flex-1" />
+                   className="text-right text-indigo-50 bg-maincolor border w-full py-2 px-3 form-input mt-2 rounded-md flex-1" />
               </div>
              </CardBody>
              <CardFooter className="pt-0">
-              <Button fullWidth className="text-indigo-800 bg-indigo-50" onClick={CalculateBMI}>
-                Calculate my BMI
+              <Button fullWidth className="text-maincolor bg-indigo-50" onClick={CalculateBMI}>
+                Calculate
               </Button>
              </CardFooter>
            </Card>

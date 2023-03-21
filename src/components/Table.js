@@ -4,7 +4,7 @@ import React from "react"
 function BodyFatTable() {
   return (
     
-    <table  className="table table-bordered table-striped bg-indigo-50">
+    <table  className="table h-auto rounded-lg table-striped bg-indigo-50">
       <thead>
         <tr className="text-indigo-800 font-semibold">
           <th>Description</th>

@@ -46,13 +46,15 @@ function Home() {
                              </div>
                         </Col>
 
+
                     </Row>
 
                     <Row className="metricsRow">
                         {/* Calories  Card */}
                         <Col  lg={4} sm={12}>
                             <Card className="metricsCard">
-                                <Card.Body className="CaloriesCard" y>
+                                <Card.Body className="CaloriesCard">
+
                                     <h2>Calories</h2>
                                 </Card.Body>
                             </Card>

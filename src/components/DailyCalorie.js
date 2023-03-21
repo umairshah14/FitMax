@@ -12,25 +12,12 @@ import {
 import {Container, Row, Col} from "react-bootstrap"
 
 
-function DailyCalorie() {
-    const [calories, setCalories] = useState({});
+function DailyCalorie(props) {
+    const [calorieData, setCalorie] = useState();
 
-    const [personData, setPersonData] = useState({
-        age: '25',
-        gender: 'male',
-        height: '180',
-        weight: '70',
-        activitylevel: 'level_1'
-    });
+    const [personData, setPersonData] = useState({});
 
     useEffect(() => {
-        setPersonData({
-            age: '25',
-            gender: 'female',
-            height: '170',
-            weight: '70',
-            activitylevel: 'level_2'
-        });
         const options = {
             method: 'GET',
             url: 'https://fitness-calculator.p.rapidapi.com/dailycalorie',
@@ -46,50 +33,74 @@ function DailyCalorie() {
               'X-RapidAPI-Host': 'fitness-calculator.p.rapidapi.com'
             }
           };
-          
-          axios.request(options).then(function (response) {
-              setCalories({
-                BMR: response.data.data.BMR
-               });
-          }).catch(function (error) {
-              console.error(error);
-          });
-      }, [personData.age, personData.gender, personData.height, personData.weight, personData.activitylevel]);
+
+          if(Object.keys(personData).length !== 0) {
+            axios.request(options).then(function (response) {
+              setCalorie({calorie:response.data.data.goals["maintain weight"]});
+            }).catch(function (error) {
+              alert("Please check your inputs!");
+            });
+          }
+      }, [personData, personData.age, personData.gender, personData.height, personData.weight, personData.activitylevel]);
+
+      useEffect(() => {
+        if(calorieData){
+          const report = JSON.parse(localStorage.getItem("report"));
+            localStorage.setItem("report",JSON.stringify({
+              bmi:report ? report.bmi : "",
+              health: report ? report.health : "",
+              fat: report ? report.fat : "",
+              calorie: calorieData.calorie,
+              ideal: report ? report.ideal : ""
+          }));
+          props.getLocal();
+        }
+      }, [calorieData]);
+
+      const CalculateCalorie = () => {
+        setPersonData({
+            age: document.getElementById("age").value,
+            gender: document.getElementById("gender").value.toLowerCase(),
+            height: document.getElementById("height").value,
+            weight: document.getElementById("weight").value,
+            activitylevel: document.getElementById("actLevel").value,
+        });
+      }
 
       return ( 
       <div>
         <Container>
          <Row>
           <Col lg={6} sm={12}>
-          <Container className="p-0 mt-14">
+          <Container className="p-0">
            <Row>
             <Col lg={6} md={6} sm={6}>
-             <div className="flex flex-col justify-center items-center mt-10 gap-4">
-               <div className="box-border h-36 w-auto p-3 border-4 border-indigo-800  bg-indigo-50 text-indigo-800 rounded-md  leading-4">
+             <div className="flex flex-col justify-center items-center  gap-4">
+               <div className="box-border h-36 w-auto p-3 border-4 border-secondcolor  bg-indigo-50 text-maincolor rounded-md  leading-4">
                 <p className="text-2xl font-bold text-center">Level 1</p>
                 <p className="text-center font-semibold">Sedentary little or no exercise</p>
                </div>
-               <div className="box-border h-36 w-auto p-3 border-4 border-indigo-800  bg-indigo-50 text-indigo-800 rounded-md  leading-4">
+               <div className="box-border h-36 w-auto p-3 border-4 border-secondcolor   bg-indigo-50 text-maincolor rounded-md  leading-4">
                 <p className="text-2xl font-bold text-center">Level 2</p>
                 <p className="text-center font-semibold">Exercise 1-3 times/week</p>
                </div>
-               <div className="box-border h-36 w-auto p-3 border-4 border-indigo-800  bg-indigo-50 text-indigo-800 rounded-md  leading-4">
+               <div className="box-border h-36 w-auto p-3 border-4 border-secondcolor   bg-indigo-50 text-maincolor rounded-md  leading-4">
                 <p className="text-2xl font-bold text-center">Level 3</p>
                 <p className="text-center font-semibold">Exercise 4-5 times/week</p>
                </div>
               </div>
             </Col>
             <Col lg={6} md={6} sm={6}>
-             <div className="flex flex-col justify-center items-center mt-10 gap-4">
-               <div className="box-border h-36 w-auto p-3 border-4 border-indigo-800  bg-indigo-50 text-indigo-800 rounded-md leading-4">
+             <div className="flex flex-col justify-center items-center gap-4">
+               <div className="box-border h-36 w-auto p-3 border-4 border-secondcolor   bg-indigo-50 text-maincolor rounded-md leading-4">
                 <p className="text-2xl font-bold text-center">Level 4</p>
                 <p className="text-center font-semibold">Daily exercise or intense exercie 3-4 times/week</p>
                </div>
-               <div className="box-border h-36 w-auto p-3 border-4 border-indigo-800  bg-indigo-50 text-indigo-800 rounded-md  leading-4">
+               <div className="box-border h-36 w-auto p-3 border-4 border-secondcolor   bg-indigo-50 text-maincolor rounded-md  leading-4">
                 <p className="text-2xl font-bold text-center">Level 5</p>
                 <p className="text-center font-semibold">Intense exercie 6-7 times/week</p>
                </div>
-               <div className="box-border h-36 w-auto p-3 border-4 border-indigo-800  bg-indigo-50 text-indigo-800 rounded-md leading-4">
+               <div className="box-border h-36 w-auto p-3 border-4 border-secondcolor  bg-indigo-50 text-maincolor rounded-md leading-4">
                 <p className="text-2xl font-bold text-center">Level 6</p>
                 <p className="text-center font-semibold">Very Intense exercie daily, or Physical job</p>
                </div>
@@ -99,18 +110,30 @@ function DailyCalorie() {
           </Container>
           </Col>
           <Col lg={6} sm={12}>
-            <div className=" flex mx-auto px-2 mt-20 mb-15">
+            <div className=" flex mx-auto px-2">
              <div className="flex max-w-md mx-auto md:max-w-xl">
                <div className="md:flex">   
-                <Card className=" bg-indigo-800 mt-12 ml-8 p-1 mr-6">
+                <Card className=" bg-maincolor border-2 border-secondcolor mt-12 ml-8 p-1 mr-6">
                  <CardHeader
                   variant="gradient"
-                  className="grid h-8 text-xl font-bold place-items-center border-2 border-indigo-800  bg-indigo-50 text-indigo-800"
+                  className="grid h-8 text-xl font-bold place-items-center border-2 border-secondcolor  bg-indigo-50 text-maincolor"
                   >
-                  {" "}
+                  
                   Daily Calories
                  </CardHeader>
                  <CardBody className="flex flex-col gap-2">
+                 <div className="flex flex-row  items-center gap-4 ">
+                    <Typography
+                      variant="small"
+                      color="blue-gray"
+                      className=" pt-3 font-medium text-indigo-50 bg-maincolortext-xl"
+                      style={{width: "100px"}}
+                    >
+                        Age    
+                  </Typography>
+                  <input id="age"
+                    className="text-right text-indigo-50 bg-maincolor border w-full py-2 px-3  mt-2 rounded-md flex-1" />
+                </div>
                  <div className="flex flex-row  items-center gap-4 ">
                     <Typography
                         variant="small"
@@ -120,7 +143,8 @@ function DailyCalorie() {
                     >
                         Gender   
                    </Typography>
-                   <select className="text-right text-indigo-50 bg-indigo-800 border w-full py-2 px-3  mt-2 rounded-md flex-1">
+                   <select id="gender" className="text-right text-indigo-50 bg-maincolor border w-full py-2 px-3  mt-2 rounded-md flex-1">
+
                       <option style={{display:"none"}}></option>
                       <option>Male</option>
                       <option>Female</option>
@@ -135,8 +159,10 @@ function DailyCalorie() {
                     >
                         Weight    
                    </Typography>
-                   <input
-                     className="text-right text-indigo-50 bg-indigo-800 border w-full py-2 px-3  mt-2 rounded-md flex-1" />
+                   <input id="weight"
+                     placeholder="kg"
+                     className="text-right text-indigo-50 bg-maincolor border w-full py-2 px-3  mt-2 rounded-md flex-1" />
+
                   </div>
                   <div className="flex flex-row items-center gap-4">
                    <Typography
@@ -147,8 +173,9 @@ function DailyCalorie() {
                     >
                         Height
                     </Typography>
-                    <input 
-                       className="text-right text-indigo-50 bg-indigo-800 border w-full py-2 px-3 form-input mt-2 rounded-md flex-1" />
+                    <input id="height" placeholder="cm"
+                       className="text-right text-indigo-50 bg-maincolor border w-full py-2 px-3 form-input mt-2 rounded-md flex-1" />
+
                   </div>
                   <div className="flex flex-row items-center gap-4 shrink">
                     <Typography
@@ -159,20 +186,23 @@ function DailyCalorie() {
                     >
                         Activity level
                     </Typography>
-                    <select className="text-right text-indigo-50 bg-indigo-800 border w-full py-2 px-3  mt-2 rounded-md flex-1">
+
+                    <select id="actLevel" className="text-right text-indigo-50 bg-maincolor border w-full py-2 px-3  mt-2 rounded-md flex-1">
+
                       <option style={{display:"none"}}></option>
-                      <option>Level 1</option>
-                      <option>Level 2</option>
-                      <option>Level 3</option>
-                      <option>Level 4</option>
-                      <option>Level 5</option>
-                      <option>Level 6</option>
+                      <option>level_1</option>
+                      <option>level_2</option>
+                      <option>level_3</option>
+                      <option>level_4</option>
+                      <option>level_5</option>
+                      <option>level_6</option>
                    </select>
                   </div>
                  </CardBody>
                  <CardFooter className="pt-0">
-                  <Button fullWidth className="text-indigo-800 bg-indigo-50" /*onClick={}*/>
-                    Calculate Daily Calories
+
+                  <Button fullWidth className="text-indigo-800 bg-indigo-50" onClick={CalculateCalorie} >
+                    Calculate
                   </Button>
                  </CardFooter>
                </Card>
