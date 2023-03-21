@@ -54,7 +54,14 @@ function Fitness() {
 
   return (
     <div>
-      <Container id="workOutBtns">
+      <Container className="exerciseTitle">
+        <h1>Fitness Calculators</h1>
+        <h5>
+          Click on one of the buttons below to find out what your ideal health levels should be
+        </h5>
+      </Container>
+
+      <Container id="fitnessBtns">
         {buttons.map((button, index) => (
           <Button
             key={index}

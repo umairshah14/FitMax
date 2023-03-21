@@ -44,6 +44,14 @@
   min-width: 153px;
 }
 
+#fitnessBtns{
+  display: flex !important; 
+  justify-content: space-evenly !important;
+  margin-right: 2rem;
+  margin-top: 1rem;
+  min-width: 153px;
+}
+
 .exerciseTitle {
   margin-top: 1rem;
 }
