@@ -12,7 +12,7 @@ export default function Header() {
   const logo = fitmax2
   return (
     <>
-      <MDBNavbar light bgColor="light" style={{padding:"0px"}} > 
+      <MDBNavbar light bgColor="light" style={{padding:"0px", borderBottom: "solid 1px rgb(0 0 0 / 85%)"}} > 
         <MDBContainer fluid style={{flexDirection:"column", backgroundColor:"#142738", paddingTop:"10px"}}>
           <MDBNavbarBrand href="/">
             <img

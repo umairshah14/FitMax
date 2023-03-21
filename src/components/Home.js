@@ -28,15 +28,15 @@ function Home() {
                         {/* BMI Card */}
                         <Col  lg={4} sm={12}>
                             <Card className="metricsCard">
-                                <Card.Body className="BMICard">
-                                    <h2>BMI</h2>
+                                <Card.Body className="BMICard card-body2">
+                                    <h3>BMI</h3>
                                 </Card.Body>
 
                             </Card>
                         </Col>
                         <Col className="metricsCardDescription"  lg={8} sm={12}>
                             <div className="BMIDescription">
-                                <h5>
+                                <h5 className="h5Text">
                                 The body mass index (BMI) is a measure that uses your height and weight to work out if your weight is healthy.
                                 The BMI calculation divides an adult's weight in kilograms by their height in metres squared. For example, A BMI of 25 means 25kg/m2.
 
@@ -53,16 +53,16 @@ function Home() {
                         {/* Calories  Card */}
                         <Col  lg={4} sm={12}>
                             <Card className="metricsCard">
-                                <Card.Body className="CaloriesCard">
+                                <Card.Body className="CaloriesCard card-body2">
 
-                                    <h2>Calories</h2>
+                                    <h3>Calories</h3>
                                 </Card.Body>
                             </Card>
                         </Col>
 
                         <Col className="metricsCardDescription" lg={8} sm={12}>
-                            <div className="CaloriesDescription">
-                               <h5>
+                            <div className="CaloriesDescription h5Text">
+                               <h5 className="h5Text">
                                     The amount of energy in an item of food or drink is measured in calories.
                                     When we eat and drink more calories than we use up, our bodies store the excess as body fat. If this continues, over time we may put on weight.
                                     As a guide, an average man needs around 2,500kcal (10,500kJ) a day to maintain a healthy body weight.
@@ -79,8 +79,8 @@ function Home() {
                         {/* Fat Card */}
                         <Col  lg={4} sm={12}>
                             <Card className="metricsCard">
-                                <Card.Body className="FatCard">
-                                    <h2>Body Fat </h2>
+                                <Card.Body className="FatCard card-body2">
+                                    <h3>Body Fat </h3>
                                 </Card.Body>
                             </Card>
                         </Col>
@@ -88,7 +88,7 @@ function Home() {
                         <Col className="metricsCardDescription" lg={8} sm={12}>
 
                         <div>
-                            <h5>
+                            <h5 className="h5Text">
                                 The body fat percentage is a measure of fitness level, since it is the only body measurement which directly
                                 calculates a person's relative body composition without regard to height or weight.
                                 The widely used body mass index (BMI) provides a measure that allows the comparison of the adiposity of individuals of different heights and weights.

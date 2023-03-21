@@ -50,14 +50,14 @@ main
 /* row of each card metric */
 .metricsRow
 {
-    margin-bottom: 5%;
+    margin-bottom: 3%;
 }
 
 /* heading  of each metric card */
 .metricsCard
 {
     
-    background-color: var(--metricsCard);
+    background-color: #142738 !important;
     color: var(--backgroundColor);
     text-align: center;
     border: 2px solid var(--backgroundColor);

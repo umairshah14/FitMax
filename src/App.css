@@ -74,3 +74,27 @@ header {
   width: 100%;
   margin: 0% auto;
 }
+
+.h5Text{
+  margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-weight: 300;
+    line-height: 1.1;
+
+}
+
+.card-body2.overlay {
+  background-color: #142738;
+  border: solid 1px #93DEFF;
+  color: white !important;
+  border-radius: 1rem;
+  
+}
+
+.card-body2 {
+  background-color: #142738;
+  border: solid 1px #93DEFF;
+  color: white !important;
+  border-radius: 1rem;
+  
+}
