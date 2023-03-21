@@ -8,11 +8,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import './assets/styles/Home.css';
-
+import Footer from './components/Footer/footer';
 function App() {
   return (
+    <>
+
     <Router>
-      <div>
+      <div style={{backgroundColor:"#142738"}}>
         <Header/>
         <Routes>
           <Route path="/" element={<Home/>}/>
@@ -21,7 +23,8 @@ function App() {
         </Routes>
       </div>
     </Router>
-  
+    <Footer></Footer>
+    </>
   );
 }
 

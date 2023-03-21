@@ -109,29 +109,10 @@ function Home() {
 
 
 
-            {/* div for google ads */}
-            <section>
 
-            </section>
-
-            <footer>
-                <Row>
-                    <Col lg={4} sm={12}>
-                        <p> FAQ </p>
-                    </Col>
-
-                    <Col lg={4} sm={12}>
-
-                    </Col>
-
-                    <Col lg={4} sm={12}>
-
-                    </Col>
-
-
-                </Row>
-            </footer>
-        </main>  
+                </section>
+        
+          </main>  
         </>
     );
 
