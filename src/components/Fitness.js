@@ -97,6 +97,7 @@ function Fitness() {
           </Button>
         ))}
       </Container>
+
       <Container className="mt-10">
         <Row>
           <Col lg={8} className="mb-10">
@@ -142,6 +143,7 @@ function Fitness() {
                 {resultData.ideal}
               </p>
             </div>
+
 
             <div className="flex justify-center items-center">
               <button
