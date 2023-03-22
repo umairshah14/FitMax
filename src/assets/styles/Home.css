@@ -16,6 +16,7 @@ main
 .carouselParent
 {
     margin-bottom: 3%;
+    padding-top: 0.4%;
 }
 
 /* images in the carousel */
@@ -24,6 +25,7 @@ main
     height: 70vh ;
     object-fit: cover;
     width: 100%;
+    object-position: 0 8%;
 }
 
 /* setting background to caption in carousel to make caption visible */
