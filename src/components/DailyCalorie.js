@@ -74,33 +74,33 @@ function DailyCalorie(props) {
           <Col lg={6} sm={12}>
           <Container className="p-0">
            <Row>
-            <Col lg={6} md={6} sm={6}>
+            <Col lg={6} md={6} sm={6} className="mt-4">
              <div className="flex flex-col justify-center items-center  gap-4">
-               <div className="box-border h-36 w-auto p-3 border-4 border-secondcolor  bg-indigo-50 text-maincolor rounded-md  leading-4">
+               <div className="box-border h-36 w-48 p-3 border-4 border-secondcolor  bg-indigo-50 text-maincolor rounded-md  leading-4">
                 <p className="text-2xl font-bold text-center">Level 1</p>
                 <p className="text-center font-semibold">Sedentary little or no exercise</p>
                </div>
-               <div className="box-border h-36 w-auto p-3 border-4 border-secondcolor   bg-indigo-50 text-maincolor rounded-md  leading-4">
+               <div className="box-border h-36 w-48 p-3 border-4 border-secondcolor   bg-indigo-50 text-maincolor rounded-md  leading-4">
                 <p className="text-2xl font-bold text-center">Level 2</p>
                 <p className="text-center font-semibold">Exercise 1-3 times/week</p>
                </div>
-               <div className="box-border h-36 w-auto p-3 border-4 border-secondcolor   bg-indigo-50 text-maincolor rounded-md  leading-4">
+               <div className="box-border h-36 w-48 p-3 border-4 border-secondcolor   bg-indigo-50 text-maincolor rounded-md  leading-4">
                 <p className="text-2xl font-bold text-center">Level 3</p>
                 <p className="text-center font-semibold">Exercise 4-5 times/week</p>
                </div>
               </div>
             </Col>
-            <Col lg={6} md={6} sm={6}>
-             <div className="flex flex-col justify-center items-center gap-4">
-               <div className="box-border h-36 w-auto p-3 border-4 border-secondcolor   bg-indigo-50 text-maincolor rounded-md leading-4">
+            <Col lg={6} md={6} sm={6} className="mt-4">
+             <div className="flex flex-col  justify-center items-center gap-4">
+               <div className="box-border h-36 w-48 p-3 border-4 border-secondcolor   bg-indigo-50 text-maincolor rounded-md leading-4">
                 <p className="text-2xl font-bold text-center">Level 4</p>
                 <p className="text-center font-semibold">Daily exercise or intense exercie 3-4 times/week</p>
                </div>
-               <div className="box-border h-36 w-auto p-3 border-4 border-secondcolor   bg-indigo-50 text-maincolor rounded-md  leading-4">
+               <div className="box-border h-36  w-48 p-3 border-4 border-secondcolor   bg-indigo-50 text-maincolor rounded-md  leading-4">
                 <p className="text-2xl font-bold text-center">Level 5</p>
                 <p className="text-center font-semibold">Intense exercie 6-7 times/week</p>
                </div>
-               <div className="box-border h-36 w-auto p-3 border-4 border-secondcolor  bg-indigo-50 text-maincolor rounded-md leading-4">
+               <div className="box-border h-36 w-48 p-3 border-4 border-secondcolor  bg-indigo-50 text-maincolor rounded-md leading-4">
                 <p className="text-2xl font-bold text-center">Level 6</p>
                 <p className="text-center font-semibold">Very Intense exercie daily, or Physical job</p>
                </div>
