@@ -86,7 +86,7 @@ function Fitness() {
                 {searchTerm === "IdealWeight" && <IdealWeight getLocal={getLocal}/>}
               </Col>
               <Col lg={4} style={{height: "fit-content"}} className=" pt-2 border-2 border-secondcolor rounded-lg bg-indigo-50 px-8">
-                <div >
+                <div>
                   <p><span className="font-bold text-xl">Your BMI is: </span>{resultData.bmi}</p>
                   <p><span className="font-bold text-xl">Your Health is: </span>{resultData.health}</p> 
                   <p><span className="font-bold text-xl">Your Body Fat Percentage is: </span>{resultData.fat}</p> 

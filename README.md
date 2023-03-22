@@ -64,7 +64,7 @@ We used the following API to showcase the highlights of each fixture in the game
 | Adil        | https://github.com/adil7-a7 | https://www.linkedin.com/in/adilseco2/ |
 | Antonio     |      https://github.com/AntonioAlgaba             |   https://www.linkedin.com/in/antonio-algaba-osuna-448bb43b/                                                |
 | Umair        | https://github.com/umairshah14                   |     https://www.linkedin.com/in/umair-shah-/                                            |
-| Zeynep        |  https://github.com/zbayazitoglu                  |   https://www.linkedin.com/in/zeynep-bayazitoglu                                              |
+| Zeynep        |  https://github.com/zbayazitoglu                  |   https://www.linkedin.com/in/zeynep-bayazitoglu/                                              |
 
 
 # Demonstration
