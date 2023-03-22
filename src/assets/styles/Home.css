@@ -24,6 +24,7 @@ main
     height: 70vh ;
     object-fit: cover;
     width: 100%;
+    object-position: 0 8%;
 }
 
 /* setting background to caption in carousel to make caption visible */
