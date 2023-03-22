@@ -70,10 +70,21 @@ We used the following API to showcase the highlights of each fixture in the game
 # Demonstration
 
 ## Landing Page
+![landing page](https://user-images.githubusercontent.com/117782725/227036917-54cb9ef4-555f-4cfd-882e-61903b2416c3.gif)
 
 
-## My Fitness Levels Page 
+## Calculating BMI
+![bmi](https://user-images.githubusercontent.com/117782725/227033696-1c432caa-6f27-4b3c-8606-f021dd780abd.gif)
 
+## Calculating Maintainance Calories
+![daily calories](https://user-images.githubusercontent.com/117782725/227033876-d76adfbb-1587-4675-9864-66ce6229ff19.gif)
+
+## Calculating Body Fat %
+![body fat](https://user-images.githubusercontent.com/117782725/227033771-3507bb15-4748-4b31-a0ee-0665c02a906e.gif)
+
+
+## Calculating Ideal Weight
+![ideal weight](https://user-images.githubusercontent.com/117782725/227038779-e4124c9f-dd56-43cc-b49b-689781a44531.gif)
 
 
 ## Workouts Page
