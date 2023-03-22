@@ -1,5 +1,5 @@
 import Carousel from 'react-bootstrap/Carousel';
-import tennis from '../assets/images/tennis.jpg';
+import over50 from '../assets/images/over50.jpg';
 import running from '../assets/images/running_img.jpg';
 import running_2 from '../assets/images/running_2.jpg';
 import body_positivity from '../assets/images/body-positivity.jpg';
@@ -24,7 +24,7 @@ function UncontrolledExample() {
         <Carousel.Item> {/* carousel container for the 2nd image  */}
           <img
             className="imgSlider"
-            src= {tennis}
+            src= {over50}
             alt="old people exercising"
           />
 
@@ -55,10 +55,14 @@ function UncontrolledExample() {
           />
 
           <Carousel.Caption className='imgCaption'> {/* carousel container for the 3rd image's caption  */}
-            <h3> Struggling to being consistent with exercises ? 
-              3 Tips that will make you be consistent </h3>
-            <p>
-              Learn More
+            <h3> 
+              3 Simple and Effective Tips that will make you be consistent 
+            </h3>
+
+            <p> 
+              <a href ="https://www.healthshots.com/fitness/staying-fit/workout-motivation-3-tips-to-help-you-be-consistent-with-your-workouts/">
+                Learn More
+              </a> 
             </p>
           </Carousel.Caption>
         </Carousel.Item>
