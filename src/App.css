@@ -110,3 +110,9 @@ header {
   background: #00cfff4d !important;
   color: rgb(255, 255, 255) !important;
 }
+
+.clearBtn{
+  background: #00cfff4d !important;
+  color: black !important;
+  align-self: center;
+}
