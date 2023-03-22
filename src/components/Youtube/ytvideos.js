@@ -69,7 +69,7 @@ const YTvideoss = () => {
         {buttons.map((button, index) => (
           <Button
             key={index}
-            variant={activeIndex === index ? "contained" : "outlined"}
+            variant={activeIndex === index ? "contained containedBtn" : "outlined outlinedBtn"}
             onClick={() => handleClick(index)}
           >
             {button.label}

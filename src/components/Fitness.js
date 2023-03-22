@@ -69,8 +69,9 @@ function Fitness() {
       <Container id="fitnessBtns">
         {buttons.map((button, index) => (
           <Button
+          className="fitnessBtnWidth"
             key={index}
-            variant={activeIndex === index ? "contained" : "outlined"}
+            variant={activeIndex === index ? "contained containedBtn " : "outlined outlinedBtn"}
             onClick={() => handleClick(index)}
           >
             {button.label}

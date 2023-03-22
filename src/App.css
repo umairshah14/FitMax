@@ -49,9 +49,11 @@
   justify-content: space-evenly !important;
   margin-right: 2rem;
   margin-top: 1rem;
-  min-width: 153px;
 }
 
+.fitnessBtnWidth {
+  min-width: 12% !important;
+}
 .exerciseTitle {
   margin-top: 1rem;
 }
@@ -97,4 +99,14 @@ header {
   /* border-right: solid 1px #93DEFF; */
   color: white !important;
   
+}
+
+.containedBtn{
+  background: #93deffed !important;
+  color: black !important;
+}
+
+.outlinedBtn{
+  background: #00cfff4d !important;
+  color: rgb(255, 255, 255) !important;
 }
