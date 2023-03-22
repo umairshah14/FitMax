@@ -126,19 +126,19 @@ function Fitness() {
               </p>
               <p>
                 <span className="font-bold text-xl">
-                  Your Body Fat Percentage is:{" "}
+                  Your Body Fat Percentage is: {" "}
                 </span>
                 {resultData.fat}
               </p>
               <p>
                 <span className="font-bold text-xl">
-                  Calorie to Maintain Weight is:{" "}
+                  Calories to Maintain Weight is: {" "}
                 </span>
                 {resultData.calorie}
               </p>
               <p>
                 <span className="font-bold text-xl">
-                  Your Ideal Weight is:{" "}
+                  Your Ideal Weight is: {" "}
                 </span>
                 {resultData.ideal}
               </p>
