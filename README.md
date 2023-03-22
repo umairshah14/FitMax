@@ -16,16 +16,17 @@ It also allows you to calculate different metrics for your health.
 * Application uses React.
 * Application uses Node.js.
 * Application uses at least two libraries, packages, or technologies that we haven't discussed.
-* Application has both GET and POST routes for retrieving and adding new data.
+* Application has  GET route for retrieving and adding new data.
 
 
 # Technologies Used
 * HTML5
-* CSS3 / Tailwind CSS
+* CSS3 / Tailwind CSS / Material Tailwind
 * React JS
 * Bootstrap
 * JavaScript 
 * API Servers (Third Party API'S)
+
 
 # API Servers Used
 ## Fitness Calculator API
@@ -53,7 +54,7 @@ We used the following API to showcase the highlights of each fixture in the game
 ## Font 
 | Font-Family    | API          |
 | ----------- | -----------         |
-| Prompt       | //fonts.googleapis.com/css?family=Prompt |
+| Questrial       | //fonts.googleapis.com/css?family=Questrial |
 
 
 # Contributors
@@ -61,9 +62,9 @@ We used the following API to showcase the highlights of each fixture in the game
 | Name       | GitHub Repo          | LinkedIn                                       |
 | ----------- | -----------         |----------------                                |
 | Adil        | https://github.com/adil7-a7 | https://www.linkedin.com/in/adilseco2/ |
-| Antonio     |                   |                                                   |
-| Umair        |                    |                                                 |
-| Zeynep        |                    |                                                 |
+| Antonio     |      https://github.com/AntonioAlgaba             |   https://www.linkedin.com/in/antonio-algaba-osuna-448bb43b/                                                |
+| Umair        | https://github.com/umairshah14                   |     https://www.linkedin.com/in/umair-shah-/                                            |
+| Zeynep        |  https://github.com/zbayazitoglu                  |   https://www.linkedin.com/in/zeynep-bayazitoglu                                              |
 
 
 # Demonstration
@@ -81,3 +82,4 @@ We used the following API to showcase the highlights of each fixture in the game
 
 
 ## URL
+* https://earnest-brioche-0d496b.netlify.app/
