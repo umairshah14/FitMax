@@ -48,8 +48,8 @@ We used the following API to showcase the highlights of each fixture in the game
 | Color       | Color Code          |
 | ----------- | -----------         |
 | Dark Blue       | #142738             |
-| White       | #f3f3f4             |
-| Grey        | rgba(255,255,255, 0.3)|
+| White       | #F3F3F4             |
+| Light Blue      | #93DEFF|
 
 ## Font 
 | Font-Family    | API          |
@@ -88,8 +88,7 @@ We used the following API to showcase the highlights of each fixture in the game
 
 
 ## Workouts Page
-
-
+![workout page](https://user-images.githubusercontent.com/117782725/227040807-ca8cd428-c1d8-4147-96be-76b132a4783c.gif)
 
 
 ## URL
