@@ -143,11 +143,11 @@ function Fitness() {
               </p>
             </div>
 
-            <div class="flex justify-center items-center">
+            <div className="flex justify-center items-center">
               <button
                 type="button"
                 onClick={clearSearch}
-                class="text-white bg-maincolor focus:outline-none font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                className="text-white bg-maincolor focus:outline-none font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
               >
                 Clear
               </button>
