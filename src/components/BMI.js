@@ -82,7 +82,7 @@ function BMI(props) {
   <div>
     <Container>
      <Row>
-      <Col lg={6} sm={12}>
+      <Col>
       <div className="flex flex-col justify-center items-center  gap-4">
            <div className="box-border h-32 w-64 p-4 border-4 border-pink-200 rounded-md bg-pink-300 ">
             <p className="text-2xl font-bold text-center">Underweight</p>
@@ -103,7 +103,7 @@ function BMI(props) {
       </div>
       </Col>
       
-      <Col lg={6} sm={12}>
+      <Col lg={6} sm={12} style={{marginTop: "-4%"}}>
         <div className=" flex mx-auto px-2 mb-15">
          <div className="flex max-w-md mx-auto md:max-w-xl">
            <div className="md:flex">   

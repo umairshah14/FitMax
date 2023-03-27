@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 const YTvideoss = () => {
-  const [searchTerm, setSearchTerm] = useState("body workouts"); // state to hold the search term entered by the user
+  const [searchTerm, setSearchTerm] = useState("mens full body workout"); // state to hold the search term entered by the user
   const [allVideos, setAllVideos] = useState([]); // state to hold an array of videos returned by the API
   const [loading, setLoading] = useState(false);
 

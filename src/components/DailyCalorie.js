@@ -71,7 +71,7 @@ function DailyCalorie(props) {
       <div>
         <Container>
          <Row>
-          <Col lg={6} sm={12}>
+          <Col lg={6} sm={12} style={{marginTop: "-3%"}}>
           <Container className="p-0">
            <Row>
             <Col lg={6} md={6} sm={6} className="mt-4">
@@ -90,26 +90,26 @@ function DailyCalorie(props) {
                </div>
               </div>
             </Col>
-            <Col lg={6} md={6} sm={6} className="mt-4">
+            <Col lg={6} md={6} sm={6} className="mt-4" >
              <div className="flex flex-col  justify-center items-center gap-4">
                <div className="box-border h-36 w-48 p-3 border-4 border-secondcolor   bg-indigo-50 text-maincolor rounded-md leading-4">
                 <p className="text-2xl font-bold text-center">Level 4</p>
-                <p className="text-center font-semibold">Daily exercise or intense exercie 3-4 times/week</p>
+                <p className="text-center font-semibold">Daily exercise or intense exercise 3-4 times/week</p>
                </div>
                <div className="box-border h-36  w-48 p-3 border-4 border-secondcolor   bg-indigo-50 text-maincolor rounded-md  leading-4">
                 <p className="text-2xl font-bold text-center">Level 5</p>
-                <p className="text-center font-semibold">Intense exercie 6-7 times/week</p>
+                <p className="text-center font-semibold">Intense exercise 6-7 times/week</p>
                </div>
                <div className="box-border h-36 w-48 p-3 border-4 border-secondcolor  bg-indigo-50 text-maincolor rounded-md leading-4">
                 <p className="text-2xl font-bold text-center">Level 6</p>
-                <p className="text-center font-semibold">Very Intense exercie daily, or Physical job</p>
+                <p className="text-center font-semibold">Very Intense exercse daily, or Physical job</p>
                </div>
              </div>
             </Col>
            </Row>
           </Container>
           </Col>
-          <Col lg={6} sm={12}>
+          <Col lg={6} sm={12} style={{marginTop: "-4%"}}>
             <div className=" flex mx-auto px-2">
              <div className="flex max-w-md mx-auto md:max-w-xl">
                <div className="md:flex">   
@@ -126,7 +126,7 @@ function DailyCalorie(props) {
                     <Typography
                       variant="small"
                       color="blue-gray"
-                      className=" pt-3 font-medium text-indigo-50 bg-maincolortext-xl"
+                      className=" pt-3 font-medium text-indigo-50 text-xl"
                       style={{width: "100px"}}
                     >
                         Age    

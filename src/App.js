@@ -9,12 +9,13 @@ import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import './assets/styles/Home.css';
 import Footer from './components/Footer/footer';
+import { height } from '@mui/system';
 function App() {
   return (
-    <>
+    <div>
 
     <Router>
-      <div style={{backgroundColor:"#142738"}}>
+      <div style={{backgroundColor:"#142738", minHeight:'100vh'}} >
         <Header/>
         <Routes>
           <Route path="/" element={<Home/>}/>
@@ -24,7 +25,7 @@ function App() {
       </div>
     </Router>
     <Footer></Footer>
-    </>
+    </div>
   );
 }
 

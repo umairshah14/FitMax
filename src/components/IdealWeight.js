@@ -80,7 +80,7 @@ function IdealWeight(props) {
             </div>
         </div>
         </Col>
-        <Col lg={6} sm={12}>
+        <Col lg={6} sm={12} style={{marginTop: "-4%"}}>
         <div className=" flex mx-auto px-2">
          <div className="flex max-w-md mx-auto md:max-w-xl">
            <div className="md:flex">   

@@ -121,7 +121,7 @@ function Fitness() {
                 {resultData.bmi}
               </p>
               <p>
-                <span className="font-bold text-xl">Your Health is: </span>
+                <span className="font-bold text-xl">Your Health Range is: </span>
                 {resultData.health}
               </p>
               <p>
