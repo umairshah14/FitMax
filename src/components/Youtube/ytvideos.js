@@ -1,18 +1,20 @@
-
 import Button from "@mui/material/Button"; // importing the Material-UI button component
 import Row from "react-bootstrap/Row"; // importing the Bootstrap row component
 import Container from "react-bootstrap/Container"; // importing the Bootstrap container component
 import Col from "react-bootstrap/Col"; // importing the Bootstrap column component
+import "../loader/loader.css";
 
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-
 const YTvideoss = () => {
   const [searchTerm, setSearchTerm] = useState("body workouts"); // state to hold the search term entered by the user
   const [allVideos, setAllVideos] = useState([]); // state to hold an array of videos returned by the API
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    setLoading(true);
+
     const options = {
       method: "GET",
       url: "https://simple-youtube-search.p.rapidapi.com/search",
@@ -24,6 +26,7 @@ const YTvideoss = () => {
     };
 
     axios
+
       .request(options) // making an API call with the search term entered by the user
       .then(function (response) {
         let result = [];
@@ -33,6 +36,7 @@ const YTvideoss = () => {
             Videolink: "https://www.youtube.com/embed/" + doc.thumbnail.id,
           }); // creating an array of objects containing video information and their embed links
         });
+        setLoading(false);
         setAllVideos(result); // updating the state with the array of videos
       })
 
@@ -54,22 +58,28 @@ const YTvideoss = () => {
   const handleClick = (index) => {
     setSearchTerm(buttons[index].searchTerm); // updating the search term state with the term associated with the clicked button
     setActiveIndex(index); // updating the active button index state
-
   };
 
   return (
     <div>
-      <Container className="exerciseTitle" style={{color:"white"}}>
+      <Container className="exerciseTitle" style={{ color: "white" }}>
         <h1>Workouts</h1>
-        <h5>Click on one of the buttons below to find videos of exercises relating to your choice</h5>
+        <h5>
+          Click on one of the buttons below to find videos of exercises relating
+          to your choice
+        </h5>
       </Container>
 
       {/* ALL BUTTONS TO PICK DIFFERENT WORKOUTS */}
-      <Container id="workOutBtns" >
+      <Container id="workOutBtns">
         {buttons.map((button, index) => (
           <Button
             key={index}
-            variant={activeIndex === index ? "contained containedBtn" : "outlined outlinedBtn"}
+            variant={
+              activeIndex === index
+                ? "contained containedBtn"
+                : "outlined outlinedBtn"
+            }
             onClick={() => handleClick(index)}
           >
             {button.label}
@@ -78,29 +88,53 @@ const YTvideoss = () => {
       </Container>
 
       {/* RETURN 3 VIDEOS FROM CHOSEN EXERCISE */}
-      <Container className="youtubeVideos">
-        <Row>
-          {allVideos.map((item, key) => {
-                
-            return (
-              <Col key={item.id} lg={4} md={6} sm={12}>
-                <div>
-                  <button></button>
-                  <iframe
-                    style={{ borderRadius: "10px" }}
-                    width="400"
-                    height="250"
-                    src={item.Videolink}
-                    title="YouTube video player"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
-                  ></iframe>
-                </div>
-              </Col>
-            );
-          })}
-        </Row>
-      </Container>
+      <div>
+        {loading ? (
+          <div className="loader-container">
+            <div class="loading">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+        ) : (
+          <Container className="youtubeVideos">
+            <Row>
+              {allVideos.map((item, key) => {
+                return (
+                  <Col key={item.id} lg={4} md={6} sm={12}>
+                    <div>
+                      <button></button>
+                      <iframe
+                        style={{ borderRadius: "10px" }}
+                        width="400"
+                        height="250"
+                        src={item.Videolink}
+                        title="YouTube video player"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowFullScreen
+                      ></iframe>
+                    </div>
+                  </Col>
+                );
+              })}
+            </Row>
+          </Container>
+        )}
+      </div>
     </div>
   );
 };

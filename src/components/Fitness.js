@@ -9,7 +9,7 @@ import { Container, Row, Col } from "react-bootstrap";
 function Fitness() {
   function clearSearch() {
     localStorage.clear();
-    location.reload();
+    window.location.reload();
   }
   const [searchTerm, setSearchTerm] = useState("BMI"); // state to hold the search term entered by the user
 
