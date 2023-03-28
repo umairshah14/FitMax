@@ -32,9 +32,9 @@ function Home() {
 
           <Row>
             <Col className="BMICardinHome" lg={4} sm={12}>
-              <Card style={{ width: "22rem", minHeight:"23rem" }} id="cardStyleHome">
+              <Card style={{ width: "22rem", minHeight:"23rem" }} className="cardStyle">
                 <Card.Body>
-                  <Card.Title>BMI</Card.Title>
+                  <Card.Title className="cardTitle">BMI</Card.Title>
                   <Card.Text>
                     The body mass index (BMI) is a measure that uses your height
                     and weight to work out if your weight is healthy. The BMI
@@ -48,7 +48,7 @@ function Home() {
             </Col>
 
             <Col className="FatCardinHome" lg={4} sm={12}>
-              <Card style={{ width: "22rem", minHeight:"23rem" }} id="cardStyleHome">
+              <Card style={{ width: "22rem", minHeight:"23rem" }} className="cardStyle">
                 <Card.Body>
                   <Card.Title>Calories</Card.Title>
                   <Card.Text>
@@ -65,7 +65,7 @@ function Home() {
             </Col>
 
             <Col className="CaloriesCardinHome" lg={4} sm={12}>
-              <Card style={{ width: "22rem", minHeight:"23rem"}} id="cardStyleHome">
+              <Card style={{ width: "22rem", minHeight:"23rem"}} className="cardStyle">
                 <Card.Body>
                   <Card.Title>Body Fat %</Card.Title>
                   <Card.Text>

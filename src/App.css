@@ -126,3 +126,12 @@ header {
   height: fit-content;
 } */
 
+.cardStyle{
+  background: none !important;
+  border: 2px solid #93DEFF !important;
+  color: white !important;
+}
+
+.cardTitle{
+  font-size: 2rem;
+}
